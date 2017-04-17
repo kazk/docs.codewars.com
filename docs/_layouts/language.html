@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+<head>
+{% include head_meta.html %}
+<title>{{ page.title }} Environment</title>
+{% include head_css.html %}
+</head>
 
 <body>
   <nav class="pt4 pl5">
-		<a href="{{ "/languages" | relative_url }}">Languages</a>
+		<a href="{{ "/languages" | relative_url }}" title="Supported Languages">Languages</a>
   </nav>
 
 	<main class="pv3 ph2 center mw7">
     {{ content | markdownify }}
 	</main>
 
-  {% if page.language %}
-    {% capture lang_id %}/{{ page.language }}/{% endcapture %}
-    <footer class="pb3 center mw7">
-      {% for lang in site.languages %}
-        {% if lang.id contains lang_id and lang.id != page.id %}
-          <a class="db" href="{{ lang.url | relative_url }}" title="{{ lang.title }}">{{ lang.title }}</a>
-        {% endif %}
+  {% assign tests = site.test_references | where: 'language', page.language %}
+  {% if tests.size != 0 %}
+    <nav class="pb3 center mw7">
+      <h3>Test References</h3>
+      <ul class="list pl0">
+      {% for t in tests %}
+        <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
       {% endfor %}
-    </footer>
+      </ul>
+    </nav>
   {% endif %}
 </body>
 </html>

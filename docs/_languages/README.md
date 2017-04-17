@@ -1,4 +1,4 @@
-# `environments`
+# `languages`
 
 Collection of general environment information for each supported language.
 
@@ -12,7 +12,7 @@ versions:  List of supported versions
 tests:     List of supported test frameworks
 packages:  List of installed packages
 services:  List of services
-timout:    String describing the allowed execution time
+timeout:   String describing the allowed execution time
 runner:    Docker image name
 ---
 ```
@@ -35,9 +35,8 @@ runner:     codewars/node-runner
 
 ## Output
 
-`/environments/:path/`
+`/languages/:path/`
 
 ## Content
 
-Any content is included in the output `/environments/:language/` using layout `_layouts/environment.html`.
-
+Any content is included in the output `/languages/:language/` using layout `_layouts/language.html`.

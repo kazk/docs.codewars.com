@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% assign p = site.languages | where: 'language', page.language | first %}
+  <nav class="pt4 pl5">
+    <a href="{{ "/languages" | relative_url }}" title="Supported Languages">Languages</a>
+    &raquo;
+    <a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a>
+  </nav>
+
+	<main class="pv3 ph2 center mw7">
+    {{ content }}
+	</main>
+</body>
+</html>

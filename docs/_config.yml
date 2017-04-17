@@ -1,6 +1,17 @@
 title:       Codewars Documentation
 description: Documentation for Codewars
 
+# This might be useful when reusing the documentation for Qualified.
+# Replace 'Codewars' in the documentation with '{{ site.platform }}'
+# and override the value with additional config file when building.
+# It should be possible to extend this to support words/paragraph switching by
+# using data files in conjunction with this variable.
+# '{{ site.data.switches[site.platform].foo }}' for contents depending on CW/Q
+# To make this work with front matters,
+# a workaround using a placeholder is necessary.
+# '{{ page.title | replace: "%PLATFORM%", site.platform }}'
+# platform: Codewars
+
 url: ""
 baseurl: "/docs.codewars.com"
 
@@ -11,7 +22,9 @@ collections:
   languages:
     output: true
     permalink: /languages/:path/
-
+  test_references:
+    output: true
+    permalink: /languages/:path/
 
 defaults:
   - scope:
@@ -24,6 +37,11 @@ defaults:
       type: "languages"
     values:
       layout: "language"
+  - scope:
+      path: ""
+      type: "test_references"
+    values:
+      layout: "test_reference"
 
 # Build settings
 highlighter: rouge
@@ -53,3 +71,4 @@ exclude:
   - README.md
   - _docs/README.md
   - _languages/README.md
+  - _test_references/README.md

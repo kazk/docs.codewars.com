@@ -1,10 +1,10 @@
 ---
-title:     Swift
-language:  swift
-versions:  [3.0-dev]
-tests:     [XCTest]
+title:    Swift
+language: swift
+versions: [3.0-dev]
+tests:    [XCTest]
 packages: []
-services:  []
-timeout:   12000ms
-runner:    codewars/swift-runner
+services: []
+timeout:  12000ms
+runner:   codewars/swift-runner
 ---
