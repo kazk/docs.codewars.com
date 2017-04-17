@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  <header class="vh-50 w-100 dt">
+    <div class="v-mid dtc tc">
+      <img src="{{ "/assets/img/logo.png" | prepend: site.baseurl }}" alt="Codewars">
+    </div>
+  </header>
+
+  <div class="w-50 center ph3-ns">
+    <div class="cf ph2-ns">
+      <div class="fl w-100 w-third-ns pa2">
+        <p>Codewars Platform</p>
+        <ul class="list pl0">
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="{{ "/languages" | relative_url }}" title="Languages & Environments">Languages &amp; Environments</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Kata">Kata</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Kumite">Kumite</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="{{ "/about/ranking-and-honor" | relative_url }}" title="Ranking & Honor">Ranking &amp; Honor</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Community">Community</a></li>
+        </ul>
+      </div>
+
+      <div class="fl w-100 w-third-ns pa2">
+        <p>Guides</p>
+        <ul class="list pl0">
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Code Editor">Code Editor</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Training">Training</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="#" title="Authoring">Authoring</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="{{ "/tutorials/best-practices" | relative_url }}" title="Best Practices">Best Practices</a></li>
+          <li><a class="link dim gray f6 f5-ns dib mr3" href="{{ "/snippets" | relative_url }}" title="Snippets">Snippets</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
+</body>
+</html>

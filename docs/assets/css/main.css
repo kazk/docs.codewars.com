@@ -1,0 +1,72 @@
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  background-color: #303133;
+  color: #efefef;
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 86%;
+  border-radius: .2rem;
+  margin: 0 .1rem;
+  padding: .1rem .2rem;
+  white-space: nowrap;
+}
+
+.highlight {
+  overflow-x: scroll;
+}
+
+.highlight > code {
+  border-radius: 0;
+  display: block;
+  padding: 1rem 0.5rem;
+  overflow-x: scroll;
+  white-space: pre;
+}
+
+
+.darken-bg    { background-color: rgba(0,0,0,.1); }
+.bg-darken-1  { background-color: rgba(0, 0, 0, .0625) }
+.bg-darken-2  { background-color: rgba(0, 0, 0, .125)  }
+.bg-darken-3  { background-color: rgba(0, 0, 0, .25)   }
+.bg-darken-4  { background-color: rgba(0, 0, 0, .5)    }
+
+a {
+  color: silver;
+}
+
+
+/*
+codewars colors:
+background-color: #303133;
+background-color: rgba(0,0,0,0.2);
+background-color: rgba(0,0,0,0.4);
+color: #efefef;
+
+red: #bb432c;
+blue: #6795de;
+passed: #7C9A44;
+failed: #C05C48;
+
+ranks:
+
+black:  "#999"
+black:  "#333"
+blue:   "#3C7EBB"
+purple: "#9574E6"
+white:  "#FFF"
+yellow: "#ECB613"
+*/
+
+/*
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: .85rem; }
+
+*/

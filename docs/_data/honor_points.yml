@@ -1,0 +1,55 @@
+# Overall Rank Progress
+- {name: Reached 7 kyu,                points:   20}
+- {name: Reached 6 kyu,                points:   30}
+- {name: Reached 5 kyu,                points:   45}
+- {name: Reached 4 kyu,                points:   70}
+- {name: Reached 3 kyu,                points:  100}
+- {name: Reached 2 kyu,                points:  150}
+- {name: Reached 1 kyu,                points:  225}
+- {name: Reached 1 dan,                points:  450}
+
+# Completing Kata
+# Base: 2; White: +0, Yellow: +6, Blue: +30, Purple: +126
+- {name: Completed Kata (White),       points:    2}
+- {name: Completed Kata (Yellow),      points:    8}
+- {name: Completed Kata (Blue),        points:   32}
+- {name: Completed Kata (Purple),      points:  128}
+- {name: Completed Kata (Black),       points:  512} # Placeholder
+
+
+# Community Contributions
+# Authoring Kata
+# Base: 3; White: +3, Yellow: +15, Blue: +75, Purple: +375
+- {name: Published Kata,                   points:    3}
+- {name: Published Kata Approved (White),  points:    3}
+- {name: Published Kata Approved (Yellow), points:   15}
+- {name: Published Kata Approved (Blue),   points:   75}
+- {name: Published Kata Approved (Purple), points:  375}
+- {name: Published Kata Approved (Black),  points: 1875} # Placeholder
+
+# Translating Kata
+# Base: 4; White: +0, Yellow: +12, Blue: +60, Purple: +252
+- {name: Published Translation Approved (White),  points:    4}
+- {name: Published Translation Approved (Yellow), points:   16}
+- {name: Published Translation Approved (Blue),   points:   64}
+- {name: Published Translation Approved (Purple), points:  256}
+
+# Feedbacks and Beta Process Contributions
+- {name: Completed Kata First,        points:    5} # not implemented
+- {name: Completed Kata (Beta),       points:    2}
+- {name: Assessed Kata Rank,          points:    1}
+- {name: Voted Kata Satisfaction,     points:    1}
+
+# Kumite
+- {name: Published Kumite,            points:    2}
+- {name: Kumite Fork Published,       points:    1}
+
+# Upvotes
+- {name: Authored Kata Upvoted,       points:    2}
+- {name: Comment Upvoted,             points:    1}
+- {name: Solution Upvoted,            points:    1}
+
+# Misc.
+- {name: Referral Signup (first 5),   points:    3}
+- {name: Referall Signup (6+),        points:    1}
+- {name: Github Account Added,        points:    1}

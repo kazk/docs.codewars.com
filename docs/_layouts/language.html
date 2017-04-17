@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  <nav class="pt4 pl5">
+		<a href="{{ "/languages" | relative_url }}">Languages</a>
+  </nav>
+
+	<main class="pv3 ph2 center mw7">
+    {{ content | markdownify }}
+	</main>
+
+  {% if page.language %}
+    {% capture lang_id %}/{{ page.language }}/{% endcapture %}
+    <footer class="pb3 center mw7">
+      {% for lang in site.languages %}
+        {% if lang.id contains lang_id and lang.id != page.id %}
+          <a class="db" href="{{ lang.url | relative_url }}" title="{{ lang.title }}">{{ lang.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </footer>
+  {% endif %}
+</body>
+</html>

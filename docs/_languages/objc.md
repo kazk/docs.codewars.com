@@ -1,0 +1,12 @@
+---
+title:    Objective-C
+language: objc
+versions: [GNUstep 1.8.1/Clang]
+tests:    [UnitKit]
+packages: []
+services: []
+timeout:  12000ms
+runner:   codewars/objc-runner
+is_beta:  true
+---
+

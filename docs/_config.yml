@@ -1,0 +1,55 @@
+title:       Codewars Documentation
+description: Documentation for Codewars
+
+url: ""
+baseurl: "/docs.codewars.com"
+
+collections:
+  docs:
+    output: true
+    permalink: /:path
+  languages:
+    output: true
+    permalink: /languages/:path/
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "languages"
+    values:
+      layout: "language"
+
+# Build settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+  entity_output:  as_char
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  toc_levels:     1..6
+  footnote_nr:    1
+
+include: ["_pages"]
+
+# Disabling @mention support because it's causing issues with code.
+# gems:
+#   - jekyll-mentions
+#
+# jekyll-mentions:
+#   base_url: https://www.codewars.com/users
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - _docs/README.md
+  - _languages/README.md
