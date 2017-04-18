@@ -39,10 +39,8 @@ layout: default
   </tbody>
 </table>
 
-
-
-<footer class="pv4 ph2">
-  {% assign langs = site.languages | where_exp: 'lang', 'lang.language != nil' | sort 'language' %}
+<div class="pv4 ph2">
+  {% assign langs = site.languages | where_exp: 'p', 'p.language != nil' | sort 'language' %}
   {% for x in langs %}
     <a class="no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2"
       href="{{ x.url | remove: '/index' | relative_url }}"
@@ -51,8 +49,7 @@ layout: default
     <span class="f6 ml3 pr2">{{ x.title }}</span>{% if x.is_beta %}<sup class="dark-gray">Beta</sup>{% endif %}
     </a>
   {% endfor %}
-</footer>
-
+</div>
 
 {% comment %}
 <div class="flex flex-wrap ph2-l">

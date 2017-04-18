@@ -1,9 +1,8 @@
 @font-face {
   font-family: 'codewars-langs';
   src:
-    url('fonts/codewars-langs.ttf?5qrvd4') format('truetype'),
-    url('fonts/codewars-langs.woff?5qrvd4') format('woff'),
-    url('fonts/codewars-langs.svg?5qrvd4#codewars-langs') format('svg');
+    url('fonts/codewars-langs.woff?4jsgo') format('woff'),
+    url('fonts/codewars-langs.ttf?4jsgo') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -41,11 +40,17 @@
 .icon-lang-csharp:before {
   content: "\e611";
 }
+.icon-lang-d:before {
+  content: "\e63e";
+}
 .icon-lang-dart:before {
   content: "\e906";
 }
 .icon-lang-elixir:before {
   content: "\e905";
+}
+.icon-lang-erlang:before {
+  content: "\e61b";
 }
 .icon-lang-fsharp:before {
   content: "\e63f";
@@ -53,17 +58,11 @@
 .icon-lang-go:before {
   content: "\e91b";
 }
+.icon-lang-groovy:before {
+  content: "\e610";
+}
 .icon-lang-haskell:before {
   content: "\e619";
-}
-.icon-lang-lua:before {
-  content: "\e616";
-}
-.icon-lang-python:before {
-  content: "\e06f";
-}
-.icon-lang-ruby:before {
-  content: "\e06e";
 }
 .icon-lang-java:before {
   content: "\e615";
@@ -71,14 +70,44 @@
 .icon-lang-javascript:before {
   content: "\e640";
 }
+.icon-lang-lisp:before {
+  content: "\e617";
+}
+.icon-lang-lua:before {
+  content: "\e616";
+}
 .icon-lang-objc:before {
   content: "\e614";
 }
 .icon-lang-ocaml:before {
   content: "\e63d";
 }
+.icon-lang-perl:before {
+  content: "\e61c";
+}
 .icon-lang-php:before {
   content: "\e60e";
+}
+.icon-lang-python:before {
+  content: "\e06f";
+}
+.icon-lang-r:before {
+  content: "\e601";
+}
+.icon-lang-racket:before {
+  content: "\e646";
+}
+.icon-lang-ruby:before {
+  content: "\e06e";
+}
+.icon-lang-rust:before {
+  content: "\e639";
+}
+.icon-lang-scala:before {
+  content: "\e618";
+}
+.icon-lang-shell:before {
+  content: "\e63c";
 }
 .icon-lang-sql:before {
   content: "\e90d";
@@ -86,13 +115,6 @@
 .icon-lang-swift:before {
   content: "\e632";
 }
-.icon-lang-shell:before {
-  content: "\e63c";
-}
-.icon-lang-rust:before {
-  content: "\e639";
-}
 .icon-lang-typescript:before {
   content: "\e641";
 }
-

@@ -72,3 +72,4 @@ exclude:
   - _docs/README.md
   - _languages/README.md
   - _test_references/README.md
+  - assets/css/fonts/*.json

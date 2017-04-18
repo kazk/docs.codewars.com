@@ -1,12 +1,41 @@
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: normal;
+  font-style: normal;
+  src: url('fonts/camingo-code-regular.woff2') format('woff2'),
+       url('fonts/camingo-code-regular.woff')  format('woff');
+}
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: 400;
+  font-style: italic;
+  src: url('fonts/camingo-code-italic.woff2') format('woff2'),
+       url('fonts/camingo-code-italic.woff')  format('woff');
+}
+@font-face {
+  font-family: 'CamingoCode';
+  font-weight: 700;
+  font-style: normal;
+  src: url('fonts/camingo-code-bold.woff2') format('woff2'),
+       url('fonts/camingo-code-bold.woff')  format('woff');
+}
+
+
 body {
   font-family: 'Lato', sans-serif;
   height: 100vh;
   background-color: #303133;
-  color: #efefef;
+  /*color: #efefef;*/
+  color: #bebebe;
+}
+
+h1,h2,h3,h4 {
+  color: #c9c9c9;
 }
 
 code {
-  background-color: rgba(0, 0, 0, 0.4);
+  font-family: 'CamingoCode', monospace;
+  background-color: #242426;
   font-size: 86%;
   border-radius: .2rem;
   margin: 0 .1rem;
@@ -34,15 +63,26 @@ code {
 .bg-darken-4  { background-color: rgba(0, 0, 0, .5)    }
 
 a {
-  color: silver;
+  color: #d3d3d3;
+  outline: 0;
+  text-decoration: none;
+}
+a:hover {
 }
 
 
 /*
-codewars colors:
+Codewars colors:
+
 background-color: #303133;
-background-color: rgba(0,0,0,0.2);
-background-color: rgba(0,0,0,0.4);
+background-color: #262729; .panel.is-darkened
+background-color: #171719; pre > code
+background-color: #222222; #sidenav
+background-color: #282828; header.main
+background-color: #1E1F21; .icon-container.is-darkened
+color: #6795DE; .icon-container.is-darkened/.btn
+background-color: #BB432C; .btn.is-red
+
 color: #efefef;
 
 red: #bb432c;
@@ -58,15 +98,4 @@ blue:   "#3C7EBB"
 purple: "#9574E6"
 white:  "#FFF"
 yellow: "#ECB613"
-*/
-
-/*
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; }
-h4 { font-size: 1.2rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: .85rem; }
-
 */
