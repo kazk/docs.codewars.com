@@ -34,7 +34,7 @@ Failed to greet monk Xuanzang on his 'Journey to the West'
 
 ## Assertions
 
-### test.assert_equals(actual, expected, message)
+### `test.assert_equals(actual, expected, message)` {#assert-equals}
 
 Checks that the actual value equals the expected value.
 If the test does not pass, an (optional) specified message is displayed.
@@ -46,7 +46,7 @@ The default for `message` is
 
 **Examples:**
 
-The following examples will all pass, and print `Test Passed`
+The following examples will all pass, and print `Test Passed`.
 
 ```python
 test.assert_equals(1,1)
@@ -73,7 +73,7 @@ test.assert_equals(1, 2, "1 is not equal to 2.  If we could prove 1 *was* 2, all
 test.assert_equals("CHEESE", {2:2}, "You've got your big cheese, I've got my hash type")
 ```
 
-### test.assert_not_equals(actual, unexpected, message)
+### `test.assert_not_equals(actual, unexpected, message)` {#assert-not-equals}
 
 Checks that the actual value equals the expected value.
 If the test does not pass, an (optional) specified message is displayed.
@@ -93,7 +93,7 @@ test.assert_not_equals("Cordyceps unilateralis", "Ophiocordyceps unilateralis se
 test.assert_not_equals(1+2+3, 6, "Error!  1+2+3 is 6 after all.  6 is the one and only perfect, triangular number.")
 ```
 
-### test.expect_error(message, thunk)
+### `test.expect_error(message, thunk)` {#expect-error}
 
 Takes a message and a [thunk](https://en.wikipedia.org/wiki/Thunk), or unevaluated function.
 
@@ -113,7 +113,7 @@ This test will pass, and print `Test Passed`:
 test.expect_error("Bad news bears: we expected stuff to blow up, but it was okay after all!", lambda: 1 + 1)
 ```
 
-### test.expect(passed, message)
+### `test.expect(passed, message)` {#expect}
 
 Checks to see if the value `passed` evaluates to some truthy value.
 Prints an optional message if provided when the test fails.
@@ -142,7 +142,7 @@ test.expect(1 == 2) # Prints "Value is not what was expected"
 
 ## Structuring Tests
 
-### test.describe(message)
+### `test.describe(message)` {#describe}
 
 Top level method for describing/grouping a set of tests.
 
@@ -158,7 +158,7 @@ for _ in xrange(100):
     test.assert_equals(x*(y+z),x*y+x*z, "Distributivity of multiplication over addition failed: x = {x}, y = {y}, z = {z}".format(x=x,y=y,z=z))
 ```
 
-### test.it(message)
+### `test.it(message)` {#it}
 
 Subgroups tests. Useful for printing lots of details on how you are testing.
 
@@ -176,3 +176,12 @@ test.it("0 is the arithmetic identity")
 for i in xrange(5):
     test.assert_equals(i + 0, i)
 ```
+
+
+{% comment %}
+https://www.codewars.com/docs/python-test-reference-1
+https://www.qualified.io/kb/languages/python/cw-2
+
+- Incorrect heading 'Minimal Test Framework'.
+- Examples are unnecessarily verbose
+{% endcomment %}

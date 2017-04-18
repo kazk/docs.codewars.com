@@ -23,6 +23,10 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   height: 100vh;
   background-color: #303133;
   /*color: #efefef;*/
@@ -30,6 +34,9 @@ body {
 }
 
 h1,h2,h3,h4 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
   color: #c9c9c9;
 }
 
