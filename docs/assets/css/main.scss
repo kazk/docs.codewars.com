@@ -1,5 +1,6 @@
 ---
 ---
+@charset "utf-8";
 
 @import 'fonts';
 @import 'icons';
@@ -35,6 +36,17 @@ code {
   white-space: nowrap;
 }
 
+// inline code
+code.highlighter-rouge {
+  font-family: 'CamingoCode', monospace;
+  background-color: #242426;
+  font-size: 86%;
+  border-radius: .2rem;
+  margin: 0 .1rem;
+  padding: .1rem .2rem;
+  white-space: nowrap;
+}
+
 h1 code,
 h2 code,
 h3 code,
@@ -42,11 +54,11 @@ h4 code,
 h5 code {
 }
 
-.highlight {
-  overflow-x: scroll;
+pre.highlight {
+  // overflow-x: scroll;
 }
 
-.highlight > code {
+pre.highlight > code {
   border-radius: 0;
   display: block;
   padding: 1rem 0.5rem;
@@ -57,6 +69,7 @@ h5 code {
 
 a {
   color: #d3d3d3;
+  background-color: transparent;
   outline: 0;
   text-decoration: none;
 }
