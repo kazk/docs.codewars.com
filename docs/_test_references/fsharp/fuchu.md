@@ -58,7 +58,9 @@ or you can use [NUnit]({{ "/languages/csharp/nunit" | relative_url }} "NUnit Tes
 
 
 {% comment %}
-https://www.qualified.io/kb/languages/fsharp/fuchu
+
+- <https://www.qualified.io/kb/languages/fsharp/fuchu>
 
 kramdown doesn't support F# syntax highlighting because it doesn't support Rouge 2.0.
+
 {% endcomment %}

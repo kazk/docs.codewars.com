@@ -300,5 +300,12 @@ it has void return type, no parameters, and it is marked with `[SetUp]` attribut
 You can learn more on the [NUnit website](http://www.nunit.org/).
 
 {% comment %}
-https://www.qualified.io/kb/languages/csharp/nunit
+
+- <https://www.qualified.io/kb/languages/csharp/nunit>
+
+TODO:
+
+- Add simple references
+- Move most of this to 'tutorials'
+
 {% endcomment %}

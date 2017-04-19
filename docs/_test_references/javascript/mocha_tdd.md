@@ -3,12 +3,6 @@ title: Mocha Testing Framework (TDD)
 language: javascript
 ---
 
-{% comment %}
-https://www.qualified.io/kb/languages/javascript/mocha_tdd
-Fixed broken link
-{% endcomment %}
-
-
 # Mocha Testing Framework (TDD)
 
 Codewars supports the Mocha testing framework, in a BDD or TDD setup.
@@ -92,3 +86,13 @@ The following test related packages are loaded into the VM and available for use
 ## Learn More
 
 You can learn more on the [Mocha website](http://mochajs.org/).
+
+
+
+{% comment %}
+
+- <https://www.qualified.io/kb/languages/javascript/mocha_tdd>
+
+- Fixed broken link to chai
+
+{% endcomment %}

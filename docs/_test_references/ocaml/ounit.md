@@ -36,5 +36,7 @@ end
 You can learn more on the [OUnit website](http://ounit.forge.ocamlcore.org/api-ounit/index.html).
 
 {% comment %}
-https://www.qualified.io/kb/languages/ocaml/ounit
+
+- <https://www.qualified.io/kb/languages/ocaml/ounit>
+
 {% endcomment %}

@@ -99,8 +99,9 @@ end
 You can learn how to use it on the [RSpec website](http://rspec.info/).
 
 {% comment %}
-https://www.qualified.io/kb/languages/sql/rspec
 
-Fixed some typos
-Should substitute Qualified terms with Codewars terms.
+- <https://www.qualified.io/kb/languages/sql/rspec>
+
+- Should substitute Qualified terms with Codewars terms, e.g, candidates.
+
 {% endcomment %}

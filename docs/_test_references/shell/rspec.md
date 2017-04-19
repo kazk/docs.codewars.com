@@ -80,5 +80,7 @@ You can learn how to use it on the [RSpec website](http://rspec.info/).
 
 
 {% comment %}
-https://www.qualified.io/kb/languages/shell/rspec
+
+- <https://www.qualified.io/kb/languages/shell/rspec>
+
 {% endcomment %}

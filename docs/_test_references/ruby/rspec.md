@@ -100,5 +100,7 @@ Calculator
 You can learn how to use it on the [RSpec website](http://rspec.info/).
 
 {% comment %}
-https://www.qualified.io/kb/languages/ruby/rspec
+
+- <https://www.qualified.io/kb/languages/ruby/rspec>
+
 {% endcomment %}

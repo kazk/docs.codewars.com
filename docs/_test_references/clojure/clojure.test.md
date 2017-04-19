@@ -159,3 +159,11 @@ For example, the following disables `clojure.core/reverse`:
 ```
 
 We should expect this test to fail, since it is clearly is using `clojure.core/reverse`.
+
+
+{% comment %}
+
+- <ttps://www.codewars.com/docs/clojure-test-reference>
+- <https://www.qualified.io/kb/languages/clojure/clojure.test>
+
+{% endcomment %}

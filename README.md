@@ -35,7 +35,7 @@ POC of GitHub Pages for [Codewars/codewars.com](https://github.com/Codewars/code
 
 <https://www.codewars.com/topics>
 
-These are harder to find because it's not under Docs.
+These are harder to find.
 
 - [Kata Ranking](https://www.codewars.com/topics/kata-ranking)
 - [Kata Best Practices](https://www.codewars.com/topics/kata-best-practices)
@@ -46,12 +46,10 @@ These are harder to find because it's not under Docs.
 - [ ] Navigation
 - [ ] Styling
 - [ ] Contribution Guide
+- [ ] License
 - [ ] Improve Documentation
   - [ ] Update "Beta Kata Process"
   - [ ] Update "Keyboard Shortcuts"
   - [ ] Update/Rewrite "Kata Best Practices"
     - Keep things simple and remove noise distracting the reader
   - [ ] Consider i18n
-
-
-

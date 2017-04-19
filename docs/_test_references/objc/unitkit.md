@@ -151,8 +151,8 @@ Tests that the code piece raises an exception of the class name `b`.
 
 
 {% comment %}
-https://www.qualified.io/kb/languages/objc/unitkit
-https://github.com/etoile/UnitKit/blob/master/FrameworkSource/UKTest.h
+
+- <https://www.qualified.io/kb/languages/objc/unitkit>
 
 - Corrected the second `UKFloatsEqual` to `UKFloatsNotEqual`
 - Added more from UKTest.h

@@ -179,9 +179,12 @@ for i in xrange(5):
 
 
 {% comment %}
-https://www.codewars.com/docs/python-test-reference-1
-https://www.qualified.io/kb/languages/python/cw-2
 
-- Incorrect heading 'Minimal Test Framework'.
+- <https://www.codewars.com/docs/python-test-reference-1>
+- <https://www.qualified.io/kb/languages/python/cw-2>
+
+- Removed incorrect heading 'Minimal Test Framework'.
+
 - Examples are unnecessarily verbose
+
 {% endcomment %}

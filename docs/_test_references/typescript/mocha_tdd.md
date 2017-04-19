@@ -91,15 +91,24 @@ You can learn more on the [Mocha website](http://mochajs.org/).
 
 
 {% comment %}
-https://www.qualified.io/kb/languages/typescript/mocha_tdd
 
-Fixed the broken url.
+- <https://www.qualified.io/kb/languages/typescript/mocha_tdd>
 
-Should fix to use TypeScript syntax in assertion style examples.
+- Fixed the broken link to Chai
 
+- Should fix to use TypeScript syntax in assertion style examples.
+
+```typescript
 import { should } from 'chai';
 should();
+```
 
+```typescript
 import { expect } from 'chai';
+```
+
+```typescript
 import { assert } from 'chai';
+```
+
 {% endcomment %}

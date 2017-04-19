@@ -161,7 +161,13 @@ Returns a single, randomly chosen item from an array.
 
 {% comment %}
 
-https://www.codewars.com/docs/js-slash-coffeescript-test-reference
-https://www.qualified.io/kb/languages/javascript/cw-2
+- <https://www.codewars.com/docs/js-slash-coffeescript-test-reference>
+- <https://www.qualified.io/kb/languages/javascript/cw-2>
+
+- Removed `Test.callCount(methodName) → Integer`
+- Added `Test.assertDeepEquals`
+- Added `Test.assertNotDeepEquals`
+- Added `Test.assertContains`
+- Added `Test.assertNotContains`
 
 {% endcomment %}

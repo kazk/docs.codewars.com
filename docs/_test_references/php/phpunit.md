@@ -10,11 +10,13 @@ language: php
 Codewars supports [PHPUnit](https://phpunit.de/) testing framework.
 
 All tests start with a subclass of `TestCase`.
-You can then add one or more test case methods to that class, each of which must start with `test`.
+You can then add one or more test case methods to that class,
+each of which must start with `test`.
 
 ## Assertions
 
-Use `$this->assert*` methods to create your assertions, such as `$this->assertEquals(actual, expected, [message])`.
+Use `$this->assert*` methods to create your assertions,
+such as `$this->assertEquals(actual, expected, [message])`.
 
 **Example**
 
@@ -35,5 +37,7 @@ class TwoOldestAgesFunction extends TestCase {
 You can learn more on the [PHPUnit website](https://phpunit.de/).
 
 {% comment %}
-https://www.qualified.io/kb/languages/php/phpunit
+
+- <https://www.qualified.io/kb/languages/php/phpunit>
+
 {% endcomment %}

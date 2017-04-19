@@ -108,3 +108,11 @@ Returns a random number.
 ### `Test.random_token()` {#random-token}
 
 Returns a random string.
+
+
+{% comment %}
+
+- <https://www.codewars.com/docs/ruby-test-reference>
+- <https://www.qualified.io/kb/languages/ruby/cw-2>
+
+{% endcomment %}

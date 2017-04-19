@@ -126,3 +126,11 @@ Returns a random string of characters.
 ### `Test.sample array`
 
 Returns a single, randomly chosen item from an array.
+
+
+{% comment %}
+
+- <https://www.qualified.io/kb/languages/coffeescript/cw-2>
+- Removed `Test.callCount methodName → Integer` for Codewars
+-
+{% endcomment %}

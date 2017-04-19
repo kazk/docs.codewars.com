@@ -56,7 +56,6 @@ public class CalculatorTest {
 JUnit 4 uses annotations to mark methods and to configure the test run.
 The following table gives an overview of the most important available annotations.
 
-|--------------------------------------+---------------------------------------------------------|
 | Annotation                           | Description                                             |
 |:-------------------------------------|:--------------------------------------------------------|
 | `@Test`                              | Identifies a method as a test method.                   |
@@ -75,7 +74,7 @@ The following table gives an overview of the most important available annotation
 |--------------------------------------|---------------------------------------------------------|
 | `@Ignore`                            | Marks that the test should be disabled.                 |
 | `@Ignore("Why disabled")`            | It is best practice to provide the optional description.|
-|--------------------------------------+---------------------------------------------------------|
+
 
 ## Assertions
 
@@ -88,7 +87,6 @@ and throws an `AssertionException` if the comparison test fails.
 The following table gives an overview of these methods.
 Parameters in `[]` brackets are optional.
 
-|--------------------------------------------------------+---------------------------------------------------------|
 | Statement                                              | Description                                             |
 |:-------------------------------------------------------|:--------------------------------------------------------|
 | `fail([message])`                                      | Let the method fail. Might be used to check that a certain part of the code is not reached or to have a failing test before the test code is implemented.|
@@ -108,14 +106,12 @@ Parameters in `[]` brackets are optional.
 | `assertSame([message,] expected, actual)`              | Checks that both variables refer to the same object.    |
 |--------------------------------------------------------|---------------------------------------------------------|
 | `assertNotSame([message,] expected, actual)`           | Checks that both variables refer to different objects.  |
-|--------------------------------------------------------+---------------------------------------------------------|
 
 
 ## Matchers
 
 The `assertThat` method allows the use of the [CoreMatchers](http://junit.org/junit4/javadoc/4.10/org/hamcrest/CoreMatchers.html) DSL for specifying tests.
 
-|--------------------------------------------------------+---------------------------------------------------------|
 | Matcher                                                | Description                                             |
 |:-------------------------------------------------------|:--------------------------------------------------------|
 | `is(thing)`                                            | Overloaded, swiss-army-knife method. Can check class membership, decorate another matcher, or check for equality. |
@@ -131,7 +127,6 @@ The `assertThat` method allows the use of the [CoreMatchers](http://junit.org/ju
 | `anything()`                                           | This matcher always evaluates to true                   |
 |--------------------------------------------------------|---------------------------------------------------------|
 | `not(T matcher)`                                       | Matches only if the underlying `matcher` does not.      |
-|--------------------------------------------------------+---------------------------------------------------------|
 
 
 **Examples:**
@@ -165,7 +160,11 @@ Writing JUnit tests Codewars is different than other environments. Here are some
 
 
 {% comment %}
-https://www.codewars.com/docs/java-test-reference
-https://www.qualified.io/kb/languages/java/junit
-Fixed dead link
+
+- <https://www.codewars.com/docs/java-test-reference>
+- <https://www.qualified.io/kb/languages/java/junit>
+
+- Fixed dead link
+  - <http://junit-team.github.io/junit/javadoc/4.10/org/hamcrest/CoreMatchers.html>
+
 {% endcomment %}

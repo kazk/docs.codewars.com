@@ -45,5 +45,7 @@ XCTMain([
 You can learn more on the Apple [XCTest website](https://developer.apple.com/reference/xctest).
 
 {% comment %}
-https://www.qualified.io/kb/languages/swift/xctest
+
+- <https://www.qualified.io/kb/languages/swift/xctest>
+
 {% endcomment %}

@@ -19,5 +19,7 @@ See <http://igloo-testing.org/assertions.html>.
 You can learn more on the [Igloo website](http://igloo-testing.org/).
 
 {% comment %}
-https://www.qualified.io/kb/languages/cpp/igloo
+
+- <https://www.qualified.io/kb/languages/cpp/igloo>
+
 {% endcomment %}
