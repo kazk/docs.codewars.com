@@ -45,3 +45,14 @@ docker run --rm --label=jekyll \
 
 - Organize documents by topic/target audience
 - Aggregate by language and add links to bottom of language page
+
+
+## Known Issues
+
+There're some syntax highlighting issues because Jekyll uses older version of Rouge.
+
+- JavaScript issues with newer syntax
+- F# not supported
+
+It's possible to use client side syntax highlighters like
+[Prism](http://prismjs.com/examples.html) by disabling Rouge if needed.

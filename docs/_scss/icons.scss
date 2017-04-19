@@ -1,14 +1,13 @@
 @font-face {
   font-family: 'codewars-langs';
-  src:
-    url('fonts/codewars-langs.woff?4jsgo') format('woff'),
-    url('fonts/codewars-langs.ttf?4jsgo') format('truetype');
+  src: url('../fonts/codewars-langs.woff?4jsgo') format('woff'),
+       url('../fonts/codewars-langs.ttf?4jsgo')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-lang-"], [class*=" icon-lang-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+  // use !important to prevent issues with browser extensions that change fonts
   font-family: 'codewars-langs' !important;
   speak: none;
   font-style: normal;
@@ -17,7 +16,7 @@
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
+  // Better Font Rendering ===========
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

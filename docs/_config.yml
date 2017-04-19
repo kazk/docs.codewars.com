@@ -45,16 +45,22 @@ defaults:
 
 # Build settings
 highlighter: rouge
+# highlighter: none
 markdown: kramdown
 kramdown:
   input: GFM
   auto_ids: true
   hard_wrap: false
   syntax_highlighter: rouge
+  # syntax_highlighter_opts: {disable: true}
   entity_output:  as_char
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
   toc_levels:     1..6
   footnote_nr:    1
+
+sass:
+  sass_dir: _scss
+  style: compressed
 
 include: ["_pages"]
 
