@@ -172,9 +172,11 @@ a minimalistic testing framework for Objective-C.
 ## Assertions
 
 {% comment %}
+
 {% for a in page.assertions %}
 - [`{{ a.name }}`](#{{ a.id }})
 {% endfor %}
+
 {% endcomment %}
 
 For a full list of assertions see [UKTest.h](https://github.com/etoile/UnitKit/blob/master/FrameworkSource/UKTest.h).
@@ -186,15 +188,16 @@ For a full list of assertions see [UKTest.h](https://github.com/etoile/UnitKit/b
 {% endfor %}
 
 {% comment %}
-https://www.qualified.io/kb/languages/objc/unitkit
-https://github.com/etoile/UnitKit/blob/master/FrameworkSource/UKTest.h
 
-- Corrected the second `UKFloatsEqual` to `UKFloatsNotEqual`
-- Added more from UKTest.h
+- https://www.qualified.io/kb/languages/objc/unitkit
+  - Corrected the second `UKFloatsEqual` to `UKFloatsNotEqual`
+  - Added more from UKTest.h
+
 {% endcomment %}
 
 
 {% comment %}
+
 POC using YAML Front Matter
 
 Pros:
