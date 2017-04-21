@@ -2,9 +2,12 @@
 ---
 @charset "utf-8";
 
+@import 'normalize';
 @import 'fonts';
 @import 'icons';
 @import 'syntax-highlight';
+@import 'typography';
+@import 'navbar';
 @import 'util';
 
 body {
@@ -20,9 +23,6 @@ body {
 }
 
 h1,h2,h3,h4 {
-  text-rendering: optimizeLegibility;
-  line-height: 1;
-  margin-top: 0;
   color: #c9c9c9;
 }
 
@@ -36,36 +36,33 @@ code {
   white-space: nowrap;
 }
 
-// inline code
-code.highlighter-rouge {
-  font-family: 'CamingoCode', monospace;
-  background-color: #242426;
-  font-size: 86%;
-  border-radius: .2rem;
-  margin: 0 .1rem;
-  padding: .1rem .2rem;
-  white-space: nowrap;
-}
-
 h1 code,
 h2 code,
 h3 code,
-h4 code,
-h5 code {
+h4 code {
+  // white-space: pre-wrap !important;
+  border-radius: .1rem;
+  margin: 0 .1rem;
+  padding: .05rem .1rem;
 }
 
-pre.highlight {
-  // overflow-x: scroll;
+
+h1,
+h2,
+h3,
+h4 {
+  word-wrap: normal;
+  hyphens: none;
 }
 
-pre.highlight > code {
+
+pre > code {
   border-radius: 0;
   display: block;
   padding: 1rem 0.5rem;
   overflow-x: scroll;
   white-space: pre;
 }
-
 
 a {
   color: #d3d3d3;
@@ -74,4 +71,8 @@ a {
   text-decoration: none;
 }
 a:hover {
+}
+
+.bg-222 {
+  background-color: #222;
 }

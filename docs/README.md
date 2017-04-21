@@ -13,11 +13,32 @@ Collection of general environment information for each supported language.
 
 See [_languages/README.md](_languages/README.md) for details.
 
-### `docs`
+### `test_references`
 
-Collection of any types of documentations.
+Collection of test frameworks for each supported language.
 
-See [_docs/README.md](_docs/README.md) for details.
+See [_test_references/README.md](_test_references/README.md) for details.
+
+
+### `references`
+
+Collection of generic reference manuals.
+
+See [_references/README.md](_references/README.md) for details.
+
+
+### `tutorials`
+
+Collection of documentations intended to teach/train users.
+
+See [_tutorials/README.md](_tutorials/README.md) for details.
+
+
+### `infos`
+
+Collections of documents containing generic information.
+
+See [_infos/README.md](_infos/README.md) for details.
 
 
 ## Development
@@ -42,12 +63,35 @@ docker run --rm --label=jekyll \
 
 ## TODO
 
+- Reduce complexity
+- Cleanup messy markups/hacks
+- Contribution guide
+- License
+- Improve documentation
+- Consider setting up CI for PR
 
-- Organize documents by topic/target audience
-- Aggregate by language and add links to bottom of language page
+### Styling
+
+- Typography
+- Colors
+- Responsive
+- Assets
+
+### Navigation
+
+- Obvious
+- Visible
+- Simple
+- Consistent
+
+- Links to Codewars/GitHub/Gitter
+- Secondary breadcrumb navigation
+- Support sequential navs where it makes sense (e.g., tutorials)
 
 
-## Known Issues
+## Known Issues/Concerns
+
+### Syntax Highlighting
 
 There're some syntax highlighting issues because Jekyll uses older version of Rouge.
 
@@ -56,3 +100,9 @@ There're some syntax highlighting issues because Jekyll uses older version of Ro
 
 It's possible to use client side syntax highlighters like
 [Prism](http://prismjs.com/examples.html) by disabling Rouge if needed.
+
+
+### Directory Structure
+
+The document root will be less cluttered by having `_collections/:collection-name`,
+but Jekyll doesn't allow placing collections in subfolders.

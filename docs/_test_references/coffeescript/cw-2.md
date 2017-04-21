@@ -64,7 +64,8 @@ Useful for testing that an error was not expected to happen.
 
 ### `describe msg, fn`
 
-Top level method for describing/grouping a set of tests. Globally aliased as `describe`.
+Top level method for describing/grouping a set of tests.
+Globally aliased as `describe`.
 
 ```coffee
 describe 'Foo', ->

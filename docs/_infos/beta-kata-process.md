@@ -32,5 +32,7 @@ for contributing to the process and the challenge of taking kata with potential 
 Then once a kata is ranked and approved you will also receive the honor and rank credit for official kata.
 
 {% comment %}
+
 Include the table from [Codewars/codewars.com#866](https://github.com/Codewars/codewars.com/issues/866)
+
 {% endcomment %}

@@ -1,0 +1,11 @@
+---
+title: Tutorials
+layout: default
+permalink: /tutorials/
+---
+
+<ul>
+  {% for t in site.tutorials %}
+    <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+  {% endfor %}
+</ul>

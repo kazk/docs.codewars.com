@@ -4,15 +4,15 @@ title: Kata Best Practices
 
 # Best Practices
 
-## Write Clear Description
+## Description
 
-## Follow Conventions
+## Conventions
 
-## Make Sure Content is New
+## No Duplicates
 
-## Keep It Simple
+## KISS
 
-## Have Full Code Coverage
+## Code Coverage
 
 {% comment %}
 
@@ -23,4 +23,3 @@ TODO
 - <http://bkaestner.github.io/codewars-rules/>
 
 {% endcomment %}
-

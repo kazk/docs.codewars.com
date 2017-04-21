@@ -4,13 +4,13 @@
 
 <body>
   {% assign p = site.languages | where: 'language', page.language | first %}
-  <nav class="pt4 pl5">
+  <nav class="pt4">
     <a href="{{ "/languages" | relative_url }}" title="Supported Languages">Languages</a>
     &raquo;
     <a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a>
   </nav>
 
-	<main class="pv3 ph2 center mw7">
+	<main class="pv3 ph2 center">
     {{ content }}
 	</main>
 </body>

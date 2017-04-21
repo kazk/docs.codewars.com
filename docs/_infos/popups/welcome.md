@@ -5,7 +5,7 @@
 
 Codewars is a community driven site aimed at training Codewarriors into becoming master developers.
 The main activity of a Codewarrior is to train and hone your craft through the use of kata.
-**Kata are short coding excersises** that are designed to test your abilities.
+**Kata are short coding exercises** that are designed to test your abilities.
 Through this process of solving kata you will learn a great deal.
 Once you complete a kata, you will also be shown the solutions of your fellow Codewarriors,
 which can often bring a whole new level of clarity to solving problems that you didn't think were possible.
@@ -27,3 +27,13 @@ Honor is what we call the points that you earn when doing activities on the site
 We won't get too deep into honor right now but an important thing to remember is that honor and ranks are treated differently.
 
 
+{% comment %}
+
+- Fixed typo:
+
+```
+- Kata are short coding excersises
++ Kata are short coding exercises
+```
+
+{% endcomment %}

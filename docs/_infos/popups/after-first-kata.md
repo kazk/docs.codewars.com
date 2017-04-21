@@ -21,4 +21,13 @@ If the kata is available in another language that you know or are interested in,
 
 ### Discourse
 
-If you have something to say about the kata you just took, you can head over to the discource section to chat about it.
+If you have something to say about the kata you just took,
+you can head over to the discourse section to chat about it.
+
+
+{% comment %}
+
+- fixed typo "discource"
+
+
+{% endcomment %}

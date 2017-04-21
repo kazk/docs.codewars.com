@@ -10,84 +10,91 @@ It is a frozen object and cannot be modified.
 
 ## Assertions
 
-### `Test.expect(passed[, message])` {#expect}
+### `Test.expect(passed[, msg])` {#expect}
 
 Core assertion method that all other methods build off of.
-`message` argument is optional.
+`msg` argument is optional.
 If it is not provided then a generic message will be used.
 Best practice is to provide your own message.
 Pass/Fail status will be written to the output stream.
 
-### `Test.assertEquals(actual, expected[, message])` {#assert-equals}
+### `Test.assertEquals(actual, expected[, msg])` {#assert-equals}
 
 Checks that the actual value equals (`===`) the expected value.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertNotEquals(actual, unexpected[, message])` {#assert-not-equals}
+{% comment %}
+
+### `Test.assertNotEquals(actual, unexpected[, msg])` {#assert-not-equals}
+
+{% endcomment %}
+
+<h3 id="assert-not-equals"><code>Test.assertNotEquals<br class="dn-ns">(actual, unexpected[, msg])</code></h3>
 
 Checks that the actual value does not equal (`!==`) the unexpected value.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional.
+The `msg` argument is optional.
 If given it will be displayed in addition to the typical message used.
 
-### `Test.assertSimilar(actual, expected[, message])` {#assert-similar}
+### `Test.assertSimilar(actual, expected[, msg])` {#assert-similar}
 
 Checks that the actual value equals (`===`) the expected value.
 [`Test.inspect`](#inspect) is used to wrap the values being tested,
 allowing for similar values to be considered the same.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertNotSimilar(actual, unexpected[, message])` {#assert-not-similar}
+### `Test.assertNotSimilar(actual, unexpected[, msg])` {#assert-not-similar}
 
 Checks that the actual value does not equal (`!==`) the unexpected value.
 [`Test.inspect`](#inspect) is used to wrap the values being tested,
 allowing for similar values to be considered the same.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertDeepEquals(actual, expected[, message])` {#assert-deep-equals}
+### `Test.assertDeepEquals(actual, expected[, msg])` {#assert-deep-equals}
 
 Checks that the actual value equals the expected value by performing deep comparison.
 Unlike [`Test.assertSimilar`](#assert-similar), values are not turned into strings.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertNotDeepEquals(actual, unexpected[, message])` {#assert-not-deep-equals}
+### `Test.assertNotDeepEquals(actual, unexpected[, msg])` {#assert-not-deep-equals}
 
 Checks that the actual value does not equal the unexpected value by performing deep comparison.
 Unlike [`Test.assertNotSimilar`](#assert-not-similar), values are not turned into strings.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertContains(actual, expected[, message])` {#assert-contains}
+### `Test.assertContains(actual, expected[, msg])` {#assert-contains}
 
 Checks that the actual value contains the expected element.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.assertNotContains(actual, unexpected[, message])` {#assert-not-contains}
+### `Test.assertNotContains(actual, unexpected[, msg])` {#assert-not-contains}
 
 Checks that the actual value does not contain the unexpected element.
 A useful message will be displayed for both pass and fail outcomes.
-The `message` argument is optional. If given it will be displayed in addition to the typical message used.
+The `msg` argument is optional. If given it will be displayed in addition to the typical message used.
 
-### `Test.expectError([message, ]fn)` {#expect-error}
+### `Test.expectError([msg, ]fn)` {#expect-error}
 
 Useful for testing that an error was expected to happen.
-`message` is optional but best practice is to provide one.
+`msg` is optional but best practice is to provide one.
 
-### `Test.expectNoError([message, ]fn)` {#expect-no-error}
+### `Test.expectNoError([msg, ]fn)` {#expect-no-error}
 
 Useful for testing that an error was not expected to happen.
-`message` is optional but best practice is to provide one.
+`msg` is optional but best practice is to provide one.
 
 ## Spec Methods
 
 ### `Test.describe(subject, fn)` {#describe}
 
-Top level method for describing/grouping a set of tests. Globally aliased as `describe`.
+Top level method for describing/grouping a set of tests.
+Globally aliased as `describe`.
 
 ```javascript
 describe("Foo", function() {
@@ -103,7 +110,8 @@ Test.describe("Foo", function() {
 
 ### `Test.it(subject, fn)` {#it}
 
-Used in conjunction with describe to group related sets of tests in a spec. Globally aliased as `it`.
+Used in conjunction with describe to group related sets of tests in a spec.
+Globally aliased as `it`.
 
 ```javascript
 describe("Foo", function() {
@@ -115,7 +123,8 @@ describe("Foo", function() {
 
 ### `Test.before(callback)` {#before}
 
-Any callbacks sent to this method will be called before each it spec is ran. Globally aliased as `before`.
+Any callbacks sent to this method will be called before each it spec is ran.
+Globally aliased as `before`.
 
 ```javascript
 // this is a contrived example

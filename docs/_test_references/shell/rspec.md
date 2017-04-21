@@ -33,7 +33,7 @@ Within the block passed to describe you can declare examples using the `it` meth
 Under the hood, an example group is a class in which the block passed to describe is evaluated.
 The blocks passed to it are evaluated in the context of an instance of that class.
 
-## Getting Started
+## Get Started
 
 Start with a simple example of behavior you expect from your system:
 
@@ -46,16 +46,17 @@ describe 'subtractor script' do
 end
 ```
 
-Run this by clicking the **VALIDATE TEST CASES** in the challenge creator, or **RUN TESTS** when taking a challenge,
+Run this by clicking the **VALIDATE TEST CASES** in the challenge creator,
+or **RUN TESTS** when taking a challenge,
 and you will see a failure similar to:
 
 ```
-  subtractor script
+subtractor script
   subtracts two numbers
-✘ expected: "3"
-     got: ""
+  ✘ expected: "3"
+         got: ""
 
-(compared using ==)
+    (compared using ==)
 ```
 
 Address the failure by defining the script:
@@ -69,7 +70,7 @@ echo $(($1 - $2))
 Now run the spec again, and watch it pass:
 
 ```
-adder script
+subtractor script
   #subtracts two numbers
     Test Passed
 ```
@@ -82,5 +83,9 @@ You can learn how to use it on the [RSpec website](http://rspec.info/).
 {% comment %}
 
 - <https://www.qualified.io/kb/languages/shell/rspec>
+
+- Fixed the last output having "adder script"
+
+- Should substitute Qualified terms with Codewars terms, e.g, challenge/kata
 
 {% endcomment %}

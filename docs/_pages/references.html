@@ -1,0 +1,25 @@
+---
+title: References
+layout: default
+permalink: /references/
+---
+
+<ul>
+  <li><a href="{{ '/languages' | relative_url }}" title="Languages and Environments">Languages and Environments</a></li>
+
+  {% for t in site.references %}
+    <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+  {% endfor %}
+
+  {% assign gs = site.test_references | group_by: 'language' %}
+{% for g in gs %}
+<li>
+  {{ site.data.language_names[g.name] }}
+  <ul>
+  {% for r in g.items %}
+    <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
+  {% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>

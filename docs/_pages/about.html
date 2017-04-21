@@ -1,0 +1,12 @@
+---
+title: About
+layout: default
+permalink: /about/
+---
+
+<ul>
+  {% for t in site.infos %}
+    {% if t.url contains '/popups/' %}{% continue %}{% endif %}
+    <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+  {% endfor %}
+</ul>

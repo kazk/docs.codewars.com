@@ -1,55 +1,38 @@
+<https://kazk.github.io/docs.codewars.com/>
+
 POC of GitHub Pages for [Codewars/codewars.com](https://github.com/Codewars/codewars.com).
 
-## Codewars Documentations
+See [docs/README.md](docs/README.md) for further details.
 
-### Docs
+## Features
 
-<https://www.codewars.com/docs>
+- Allows contributions from the community to improve the documentation.
+  - Mostly markdown, [kramdown](https://kramdown.gettalong.org/index.html) with GFM parser.
+  - Contributions goes live quickly and automatically once merged.
 
-- [Training Manual](https://www.codewars.com/docs)
+- Reduced cost of maintenance by taking advantage of templates, data files, and YAML front matter.
 
-- [Programming Languages & Environments](https://www.codewars.com/docs/programming-languages-and-environments)
+- Documentations are organized by topic and target.
 
-- [Kata Test Framework](https://www.codewars.com/docs/kata-test-framework)
-  - [JS/CoffeeScript Test Reference](https://www.codewars.com/docs/js-slash-coffeescript-test-reference)
-  - [Ruby Test Reference](https://www.codewars.com/docs/ruby-test-reference)
-  - [Haskell Test Reference](https://www.codewars.com/docs/haskell-test-reference)
-  - [Clojure Test Reference](https://www.codewars.com/docs/clojure-test-reference)
-  - [Python Test Reference](https://www.codewars.com/docs/python-test-reference-1)
-  - [Java Test Reference](https://www.codewars.com/docs/java-test-reference)
+- Responsive design (WIP).
+- Improved readability (WIP).
 
-- [Kata Creator](https://www.codewars.com/docs/kata-creator)
-  - [Description Markdown Field](https://www.codewars.com/docs/description-markdown-field)
-  - [Solution Code Blocks](https://www.codewars.com/docs/solution-code-blocks)
-  - [Test Fixture Code Block](https://www.codewars.com/docs/test-fixture-code-block)
+## Screenshots
 
-- [Codewars Platform](https://www.codewars.com/docs/codewars-platform)
-  - [Comment Markdown](https://www.codewars.com/docs/comment-markdown)
-  - [Ranking & Honor](https://www.codewars.com/docs/ranking-and-honor-1)
-  - [Beta Kata Process](https://www.codewars.com/docs/beta-kata-process)
+Styling is temporary and work in progress, images can be outdated.
 
-- [Codewars Code Editor](https://www.codewars.com/docs/codewars-code-editor)
-  - [Keyboard Shortcuts](https://www.codewars.com/docs/keyboard-shortcuts)
+![Landscape S - scrolled](img/s-landscape-scrolled.png)
 
-### Forum
+![Landscape XS - scrolled](img/xs-landscape-scrolled.png)
 
-<https://www.codewars.com/topics>
+![Medium - scrolled](img/m-landing-scrolled.png)
 
-These are harder to find.
+![Large screen](img/l-landing.png)
 
-- [Kata Ranking](https://www.codewars.com/topics/kata-ranking)
-- [Kata Best Practices](https://www.codewars.com/topics/kata-best-practices)
+### Key Concepts
 
-
-## TODO
-
-- [ ] Navigation
-- [ ] Styling
-- [ ] Contribution Guide
-- [ ] License
-- [ ] Improve Documentation
-  - [ ] Update "Beta Kata Process"
-  - [ ] Update "Keyboard Shortcuts"
-  - [ ] Update/Rewrite "Kata Best Practices"
-    - Keep things simple and remove noise distracting the reader
-  - [ ] Consider i18n
+- Simple
+- Obvious
+- Readable
+- Responsive
+- Codewars colors

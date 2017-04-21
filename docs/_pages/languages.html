@@ -1,0 +1,40 @@
+---
+title: Languages
+permalink: /languages/
+layout: default
+---
+
+<h1 class="lh-title">Languages</h1>
+
+<table class="center collapse w-90 w-80-ns">
+  <thead>
+    <tr class="lh-title tl">
+      <th class="pl2">Language</th>
+      <th class="pl2">Version</th>
+      <th class="pl2">Test Framework</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% assign langs = site.languages | sort 'language' %}
+  {% for env in langs %}
+    {% assign n = env.versions.size %}
+    {% capture darken %}{% cycle ' darken-bg', '' %}{% endcapture %}
+    {% if n == 1 %}
+      <tr class="lh-copy">
+        <td class="pl2{{ darken }}">{{ env.title }}</td>
+        <td class="pl2{{ darken }}">{{ env.versions | first }}</td>
+        <td class="pl2{{ darken }}">{{ env.tests | join: '<br>' }}</td>
+      </tr>
+    {% else %}
+      {% for v in env.versions %}
+      <tr class="lh-copy">
+        {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ env.title }}</td>{% endif %}
+        <td class="pl2{{ darken }}">{{ v }}</td>
+        {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ env.tests | join: '<br>' }}</td>{% endif %}
+      </tr>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
