@@ -97,6 +97,7 @@ There're some syntax highlighting issues because Jekyll uses older version of Ro
 
 - JavaScript issues with newer syntax
 - F# not supported
+- PHP requires `?start_inline=true` after `php` tag.
 
 It's possible to use client side syntax highlighters like
 [Prism](http://prismjs.com/examples.html) by disabling Rouge if needed.

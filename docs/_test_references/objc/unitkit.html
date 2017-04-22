@@ -1,8 +1,34 @@
 ---
-title: UnitKit Testing Framework - YAML Front Matter POC
+title: UnitKit Testing Framework
 language: objc
 
+introduction: |
+  # UnitKit Testing Framework
+  Codewars supports [UnitKit](https://github.com/etoile/UnitKit),
+  a minimalistic testing framework for Objective-C.
+
+basic_setup: |
+  ## Basic Setup
+
+  ```objc
+  @implementation TestSuite
+    // add a test here
+    // this must start with test
+    - (void) testAddOne
+    {
+      // add assertions here
+      UKIntsEqual(@1, addOne(@2));
+    }
+  @end
+  ```
+
 assertions:
+  intro: |
+    ## Assertions
+
+    For a full list of assertions see [UKTest.h](https://github.com/etoile/UnitKit/blob/master/FrameworkSource/UKTest.h).
+
+  defs:
   - name: UKPass()
     id: uk-pass
     desc: |
@@ -149,67 +175,20 @@ assertions:
       Tests that the code piece raises an exception of the class name `b`.
 ---
 
-# UnitKit Testing Framework
+{{ page.introduction | markdownify }}
 
-Codewars supports [UnitKit](https://github.com/etoile/UnitKit),
-a minimalistic testing framework for Objective-C.
+{{ page.basic_setup | markdownify }}
 
-## Basic Setup
-
-```objc
-@implementation TestSuite
-  // add a test here
-  // this must start with test
-  - (void) testAddOne
-  {
-    // add assertions here
-    UKIntsEqual(@1, addOne(@2));
-  }
-@end
-```
-
-
-## Assertions
-
-{% comment %}
-
-{% for a in page.assertions %}
-- [`{{ a.name }}`](#{{ a.id }})
-{% endfor %}
-
-{% endcomment %}
-
-For a full list of assertions see [UKTest.h](https://github.com/etoile/UnitKit/blob/master/FrameworkSource/UKTest.h).
-
-{% for a in page.assertions %}
-### `{{a.name}}` {#{{ a.id }}}
-
+{{ page.assertions.intro | markdownify }}
+{% for a in page.assertions.defs %}
+<h3 id="{{ a.id }}"><code>{{ a.name }}</code></h3>
 {{ a.desc | markdownify }}
 {% endfor %}
 
 {% comment %}
 
 - https://www.qualified.io/kb/languages/objc/unitkit
-  - Corrected the second `UKFloatsEqual` to `UKFloatsNotEqual`
+  - Fixed the second `UKFloatsEqual` to `UKFloatsNotEqual`
   - Added more from UKTest.h
-
-{% endcomment %}
-
-
-{% comment %}
-
-POC using YAML Front Matter
-
-Pros:
-
-- Documentation data
-  - Can be used to generate table of contents server-side
-- Helps to keep consistency
-- Allows more complex markups without raising the contribution barrier
-
-Cons:
-
-- Browsing files on GitHub :(
-  But this is already affected by using front matters and liquid templates.
 
 {% endcomment %}
