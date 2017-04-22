@@ -16,16 +16,16 @@ permalink: /search/
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.0.1/lunr.min.js"></script>
 <script>
   // <https://lunrjs.com/guides/searching.html>
-  // - single term: 'foo' returns documents matching 'foo'.
-  // - multiple terms: 'foo bar' returns documents matching 'foo' OR 'bar'.
+  // - single term: `foo` returns documents matching `foo`.
+  // - multiple terms: `foo bar` returns documents matching `foo` OR `bar`.
   //   documents matching both scores higher and are returned first.
-  // - wildcards: 'foo*'
-  // - fields: 'title:javascript' returns documents having 'javascript' in *title*.
-  //   Can be combied with other term modifiers.
-  //   'title:foo* bar' returns documents having 'foo*' in title and 'bar' in any field
+  // - wildcards: `foo*`
+  // - fields: `title:javascript` returns documents having 'javascript' in title.
+  //   This can be combined with other term modifiers.
+  //   `title:foo* bar` returns documents having `foo*` in "title" and `bar` in any field.
   //   Unrecognized field will error.
-  // - boost: `foo^10 bar` treats 'bar' more significant
-  // - fuzzy: allow `n` edit distances. 'foo~1' matches 'boo' not 'boot'
+  // - boost: `foo^10 bar` treats `foo` more significant
+  // - fuzzy: allow `n` edit distances. `foo~1` matches `boo`, but not `boot`
   (function() {
     const search = window.location.search;
     if (!search) return;
@@ -46,14 +46,11 @@ permalink: /search/
         this.field('url');
         for (const o of os) this.add(o);
       });
-      const rs = idx.search(q);
-      $results.innerHTML = '';
-      for (const r of rs) {
-        console.log(r);
+      $results.innerHTML = idx.search(q).map(r => {
         const d = os[r.ref];
-        console.log(d);
-        $results.innerHTML += `<p><a href="${d.url}">${d.title}</a></p>`;
-      }
+        console.log(r); console.log(d);
+        return `<p><a href="${d.url}">${d.title}</a></p>`;
+      }).join('');
     });
   })();
 </script>
