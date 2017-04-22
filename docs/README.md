@@ -15,7 +15,7 @@ See [_languages/README.md](_languages/README.md) for details.
 
 ### `test_references`
 
-Collection of test frameworks for each supported language.
+Collection of test framework references for each supported language.
 
 See [_test_references/README.md](_test_references/README.md) for details.
 
@@ -61,6 +61,7 @@ docker run --rm --label=jekyll \
   jekyll serve --config _config.yml,_config_dev.yml
 ```
 
+
 ## TODO
 
 - Reduce complexity
@@ -69,24 +70,17 @@ docker run --rm --label=jekyll \
 - License
 - Improve documentation
 - Consider setting up CI for PR
-
-### Styling
-
-- Typography
-- Colors
-- Responsive
-- Assets
-
-### Navigation
-
-- Obvious
-- Visible
-- Simple
-- Consistent
-
-- Links to Codewars/GitHub/Gitter
-- Secondary breadcrumb navigation
-- Support sequential navs where it makes sense (e.g., tutorials)
+- Styling
+  - Typography
+  - Colors
+  - Responsive
+  - Assets
+- Navigation
+  - Obvious
+  - Visible
+  - Simple
+  - Consistent
+  - Add links to Codewars/GitHub/Gitter
 
 
 ## Known Issues/Concerns
