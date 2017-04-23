@@ -16,7 +16,7 @@ each of which must start with `test`.
 ## Assertions
 
 Use `$this->assert*` methods to create your assertions,
-such as `$this->assertEquals(actual, expected, [message])`.
+such as `$this->assertEquals(expected, actual, [message])`.
 
 **Example**
 
@@ -24,10 +24,10 @@ such as `$this->assertEquals(actual, expected, [message])`.
 class TwoOldestAgesFunction extends TestCase {
     public function testAlgorithm() {
         $results1 = twoOldestAges([1, 5, 87, 45, 8, 8]);
-        $this->assertEquals($results1[0], 45);
-        $this->assertEquals($results1[1], 87);
+        $this->assertEquals(45, $results1[0]);
+        $this->assertEquals(87, $results1[1]);
         $results2 = twoOldestAges([6, 5, 83, 5, 3, 18]);
-        $this->assertEquals($results2, [18, 83]);
+        $this->assertEquals([18, 83], $results2);
     }
 }
 ```
@@ -39,5 +39,6 @@ You can learn more on the [PHPUnit website](https://phpunit.de/).
 {% comment %}
 
 - <https://www.qualified.io/kb/languages/php/phpunit>
+  - Fixed the order of parameters
 
 {% endcomment %}
