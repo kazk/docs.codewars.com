@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-{% include head_meta.html %}
-<title>{{ page.title }} Environment</title>
-{% include head_css.html %}
-</head>
+{% include head.html %}
 
 <body>
-  <nav class="pt4">
-		<a href="{{ "/" | relative_url }}" title="Codewars Documentation">Home</a>
-    &raquo;
-		<a href="{{ "/languages" | relative_url }}" title="Supported Languages">Languages</a>
-  </nav>
-
-	<main class="pv3 ph2 center mw7">
-    {{ content | markdownify }}
-	</main>
-
-  {% assign tests = site.test_references | where: 'language', page.language %}
-  {% if tests.size != 0 %}
-    <nav class="pb3 center mw7">
-      <h3>Test References</h3>
-      <ul class="list pl0">
-      {% for t in tests %}
-        <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
-      {% endfor %}
-      </ul>
+  <header>
+    <nav class="pt1">
+      <ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+        <span>/</span>
+        <li class="dib"><a href="{{ '/languages' | relative_url }}" title="Supported Languages">Languages</a></li>
+      </ol>
     </nav>
-  {% endif %}
+  </header>
+
+	<div class="ph2 center mw7">
+    <h1 class="lh-title mv1">{{ page.title }}</h1>
+    {% unless page.no_overview %}
+    <h2 class="lh-title mv0">Overview</h2>
+    <dl>
+      <dt>Versions</dt>{% for v in page.versions %}<dd>{{ v }}</dd>{% endfor %}
+
+      <dt>Test Frameworks</dt>
+      {% for x in page.tests %}<dd>{{ x }}</dd>{% else %}<dd>No Test Integration</dd>{% endfor %}
+
+      {% if page.timeout %}<dt>Timeout</dt><dd>{{ page.timeout }}</dd>{% endif %}
+
+      <dt>Installed Packages</dt>
+      {% for x in page.packages %}<dd>{{ x }}</dd>{% else %}<dd>None</dd>{% endfor %}
+      <dt>Services</dt>
+      {% for x in page.services %}<dd>{{ x }}</dd>{% else %}<dd>None</dd>{% endfor %}
+
+      {% if page.runner %}<dt>Docker Image</dt><dd>{{ page.runner }}</dd>{% endif %}
+    </dl>
+    {% endunless %}
+
+    {% assign text = content | strip %}
+    {% unless text == '' %}<div>{{ text | markdownify }}</div>{% endunless %}
+
+    {% assign test_refs = site.test_references | where: 'language', page.language %}
+    {% unless test_refs.size == 0 %}
+    <h2 class="mv0">Test References</h2>
+    <ul>
+    {% for t in test_refs %}
+      <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endunless %}
+
+    {% capture exp %}r.languages contains '{{ page.language }}'{% endcapture %}
+    {% assign recipes = site.recipes | where_exp: 'r', exp %}
+    {% unless recipes.size == 0 %}
+    <h2 class="mv0">Cookbook</h2>
+    {% assign gs = recipes | group_by: 'chapter' %}
+    {% for g in gs %}
+    <h3 class="mv0">{{ g.name }}</h2>
+    <ul>
+      {% assign rs = g.items | sort: 'number' %}
+      {% for r in rs %}
+      <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+    {% endunless %}
+	</div>
+
+  <footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
 </body>
 </html>
