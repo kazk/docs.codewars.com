@@ -34,14 +34,14 @@ permalink: /languages/
         {% capture darken %}{% cycle ' darken-bg', '' %}{% endcapture %}
         {% if n == 1 %}
           <tr class="lh-copy">
-            <td class="pl2{{ darken }}">{{ p.title }}</td>
-            <td class="pl2{{ darken }}">{{ p.versions | first }}</td>
+            <td class="pl2{{ darken }}"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>
+            <td class="pl2{{ darken }}">{{ p.versions[0] }}</td>
             <td class="pl2{{ darken }}">{{ p.tests | join: '<br>' }}</td>
           </tr>
         {% else %}
           {% for v in p.versions %}
           <tr class="lh-copy">
-            {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ p.title }}</td>{% endif %}
+            {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>{% endif %}
             <td class="pl2{{ darken }}">{{ v }}</td>
             {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ p.tests | join: '<br>' }}</td>{% endif %}
           </tr>
@@ -52,10 +52,6 @@ permalink: /languages/
     </table>
   </main>
 
-  <footer class="w-100 dt">
-    <div class="v-mid dtc tc">
-      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>

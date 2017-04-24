@@ -30,10 +30,6 @@ permalink: /cookbook/
     {% endfor %}
   </main>
 
-  <footer class="w-100 dt">
-    <div class="v-mid dtc tc">
-      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>

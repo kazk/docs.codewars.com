@@ -14,6 +14,8 @@ packages:  List of installed packages
 services:  List of services
 timeout:   String describing the allowed execution time
 runner:    Docker image name
+
+no_overview: Disables the language overview if set to `true`.
 ---
 ```
 
