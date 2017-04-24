@@ -4,14 +4,23 @@
 
 <body>
 	<header>
-		<nav>
+		<nav class="pt1">
 			<ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+				<span>/</span>
 				<li class="dib"><a href="{{ '/cookbook' | relative_url }}">Cookbook</a></li>
 			</ol>
 		</nav>
 	</header>
-	<main class="pt2-ns pb5-ns pl5-ns mw8">
+
+	<main class="center">
     {{ content }}
 	</main>
+
+	<footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
 </body>
 </html>

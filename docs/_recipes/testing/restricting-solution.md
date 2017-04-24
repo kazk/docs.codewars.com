@@ -64,41 +64,10 @@ class AddWithoutAdditionSignTest extends TestCase {
 }
 ```
 
-
 ## Discussion
 
 The above method fails if the user's solution modifies the `soltion.txt`.
-For example:
 
-```javascript
-// write a add function that doesn't use the plus symbol
-function add(a, b) {
-  return a + b;
-}
+A possible workaround is to read `solution.txt` in preloaded section so the user's solution is read before `solution.txt` is modified.
 
-// Make sure to view the test cases to see how this test fails
-// Rewrite solution.txt
-require('fs').writeFileSync('/home/codewarrior/solution.txt', 'no pluses here!')
-```
-
-A possible workaround is to read `solution.txt` in preloaded section so the user's solution is read before it's modified.
-
-### JavaScript
-
-by @10XL ([src](https://www.codewars.com/kumite/579d80d97cb1f385ed000231?sel=58e0f03292d04c7805000012))
-
-**Preloaded Code**:
-
-```javascript
-const realSolution = require('fs').readFileSync('/home/codewarrior/solution.txt', 'utf8');
-```
-
-**Test Cases**:
-
-```javascript
-describe("Check Real Solution", function() {
-  it("should prevent the '+' symbol from being used anywhere in the code", function() {
-    Test.expect(realSolution.indexOf('+') == -1, "Your code isn't allowed to include the + symbol!");
-  });
-});
-```
+See [this recipe]({{ site.baseurl }}{% link _recipes/testing/restricting-solution-anti-cheat.md %}) for details.

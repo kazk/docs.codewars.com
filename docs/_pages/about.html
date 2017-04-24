@@ -1,12 +1,33 @@
 ---
 title: About
-layout: default
 permalink: /about/
 ---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-<ul>
-  {% for t in site.infos %}
-    {% if t.url contains '/popups/' %}{% continue %}{% endif %}
-    <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
-  {% endfor %}
-</ul>
+<body>
+  <header>
+    <nav class="pt1">
+      <ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="center">
+    <ul>
+      {% for t in site.infos %}
+        {% if t.url contains '/popups/' %}{% continue %}{% endif %}
+        <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </main>
+
+  <footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
+</body>
+</html>

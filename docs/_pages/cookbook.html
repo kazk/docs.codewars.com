@@ -1,17 +1,39 @@
 ---
 title: Cookbook
-layout: default
 permalink: /cookbook/
 ---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-{% assign gs = site.recipes | group_by: 'chapter' %}
+<body>
+  <header>
+    <nav class="pt1">
+      <ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+      </ol>
+    </nav>
+  </header>
 
-{% for g in gs %}
-<h2 class="f3">{{ g.name }}</h2>
-<ul>
-  {% assign rs = g.items | sort: 'number' %}
-  {% for r in rs %}
-    <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endfor %}
+  <main class="center">
+    <h1 class="mb1 lh-title">Cookbook</h1>
+    {% assign gs = site.recipes | group_by: 'chapter' %}
+
+    {% for g in gs %}
+    <h2 class="f3">{{ g.name }}</h2>
+    <ul>
+      {% assign rs = g.items | sort: 'number' %}
+      {% for r in rs %}
+      <li><a href="{{ r.url | relative_url }}" title="{{ r.title }}">{{ r.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </main>
+
+  <footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
+</body>
+</html>

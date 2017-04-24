@@ -1,40 +1,61 @@
 ---
 title: Languages
 permalink: /languages/
-layout: default
 ---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-<h1 class="lh-title">Languages</h1>
+<body>
+  <header>
+    <nav class="pt1">
+      <ol class="list">
+        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
+      </ol>
+    </nav>
+  </header>
 
-<table class="center collapse w-90 w-80-ns">
-  <thead>
-    <tr class="lh-title tl">
-      <th class="pl2">Language</th>
-      <th class="pl2">Version</th>
-      <th class="pl2">Test Framework</th>
-    </tr>
-  </thead>
+  <main class="center">
+    <h1 class="mb1 lh-title">Languages</h1>
 
-  <tbody>
-  {% assign langs = site.languages | sort 'language' %}
-  {% for env in langs %}
-    {% assign n = env.versions.size %}
-    {% capture darken %}{% cycle ' darken-bg', '' %}{% endcapture %}
-    {% if n == 1 %}
-      <tr class="lh-copy">
-        <td class="pl2{{ darken }}">{{ env.title }}</td>
-        <td class="pl2{{ darken }}">{{ env.versions | first }}</td>
-        <td class="pl2{{ darken }}">{{ env.tests | join: '<br>' }}</td>
-      </tr>
-    {% else %}
-      {% for v in env.versions %}
-      <tr class="lh-copy">
-        {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ env.title }}</td>{% endif %}
-        <td class="pl2{{ darken }}">{{ v }}</td>
-        {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ env.tests | join: '<br>' }}</td>{% endif %}
-      </tr>
+    <table class="center collapse w-90 w-80-ns">
+      <thead>
+        <tr class="lh-title tl">
+          <th class="pl2">Language</th>
+          <th class="pl2">Version</th>
+          <th class="pl2">Test Framework</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% assign langs = site.languages | sort 'language' %}
+      {% for p in langs %}
+        {% assign n = p.versions.size %}
+        {% capture darken %}{% cycle ' darken-bg', '' %}{% endcapture %}
+        {% if n == 1 %}
+          <tr class="lh-copy">
+            <td class="pl2{{ darken }}">{{ p.title }}</td>
+            <td class="pl2{{ darken }}">{{ p.versions | first }}</td>
+            <td class="pl2{{ darken }}">{{ p.tests | join: '<br>' }}</td>
+          </tr>
+        {% else %}
+          {% for v in p.versions %}
+          <tr class="lh-copy">
+            {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ p.title }}</td>{% endif %}
+            <td class="pl2{{ darken }}">{{ v }}</td>
+            {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ p.tests | join: '<br>' }}</td>{% endif %}
+          </tr>
+          {% endfor %}
+        {% endif %}
       {% endfor %}
-    {% endif %}
-  {% endfor %}
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="w-100 dt">
+    <div class="v-mid dtc tc">
+      <p class="pv4">&copy; {{ "today" | date: "%Y" }} Codewars</p>
+    </div>
+  </footer>
+</body>
+</html>

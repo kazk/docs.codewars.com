@@ -10,7 +10,7 @@ Pages in this collection should contain "Problem", "Solution", and "Discussion".
 ---
 title:     Recipe Title
 chapter:   Chapter/Category
-number:    A number used to help sorting.
+number:    A number used to help sorting. Temporary hack :(
 languages: A list of supported languages to be used to generate links from the language page.
 ---
 ```
