@@ -1,0 +1,465 @@
+# https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
+swagger: '2.0'
+
+produces:
+- application/json
+consumes:
+- application/json
+
+host: www.codewars.com
+basePath: /api/v1
+schemes:
+- http
+- https
+
+info:
+  title: Codewars API
+  version: '1'
+
+  description: |
+    The [Codewars](https://www.codewars.com) API is organized around REST.
+    Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
+    We use built-in HTTP features, like HTTP authentication and HTTP verbs.
+    JSON will be returned in all responses from the API, including errors.
+
+    ## Authentication
+
+    Codewars uses API access keys to allow access to restricted endpoints.
+    Access keys are specific to a user account and can be found by navigating to your [Account Settings ](https://www.codewars.com/users/edit).
+
+    It can be included either via a header:
+
+    `Authorization: {some-api-key}`
+
+    or by passing it as a parameter:
+
+    `?access_key={some-api-key}`
+
+    ## Errors
+
+    Codewars uses conventional HTTP response codes to indicate success or failure of an API request.
+
+  x-logo:
+    url: 'https://dev.codewars.com/images/logo-220ae435.png'
+
+tags:
+  - name: users
+    description: Operations about user
+  - name: code_challenges
+    x-displayName: Code Challenges
+    description: Code Challenges
+
+definitions:
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+      url:
+        type: string
+
+  UserInfo:
+    type: object
+    properties:
+      username:
+        type: string
+      name:
+        type: string
+      honor:
+        type: integer
+        format: int32
+      clan:
+        type: string
+      leaderboardPosition:
+        type: integer
+        format: int32
+      skills:
+        type: array
+        items:
+          type: string
+      ranks:
+        type: object
+        properties:
+          overall:
+            $ref: '#/definitions/Progress'
+          language:
+            type: object
+            description: Map of language name as a key and Progress as a value.
+            additionalProperties:
+              $ref: '#/definitions/Progress'
+      codeChallenges:
+        type: object
+        properties:
+          totalAuthored:
+            description: Number of authored code challenges
+            type: integer
+            format: int32
+          totalCompleted:
+            description: Number of completed code challenges
+            type: integer
+            format: int32
+    example:
+      username: "jhoffner"
+      name: "Jake Hoffner"
+      honor: 25130
+      clan: "Codewars"
+      leaderboardPosition: 9
+      skills:
+      - "ruby"
+      - "c#"
+      - ".net"
+      - "javascript"
+      - "coffeescript"
+      - "nodejs"
+      - "rails"
+      ranks:
+        overall:
+          rank: -3
+          name: "3 kyu"
+          color: "blue"
+          score: 2889
+        languages:
+          coffeescript:
+            rank: -4
+            name: "4 kyu"
+            color: "blue"
+            score: 868
+          java:
+            rank: -6
+            name: "6 kyu"
+            color: "yellow"
+            score: 79
+          haskell:
+            rank: -6
+            name: "6 kyu"
+            color: "yellow"
+            score: 76
+          typescript:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 3
+          csharp:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 5
+          crystal:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 2
+          javascript:
+            rank: -3
+            name: "3 kyu"
+            color: "blue"
+            score: 1936
+          ruby:
+            rank: -4
+            name: "4 kyu"
+            color: "blue"
+            score: 1572
+          python:
+            rank: -6
+            name: "6 kyu"
+            color: "yellow"
+            score: 92
+          elixir:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 2
+          sql:
+            rank: -6
+            name: "6 kyu"
+            color: "yellow"
+            score: 84
+          shell:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 5
+          objc:
+            rank: -8
+            name: "8 kyu"
+            color: "white"
+            score: 2
+      codeChallenges:
+        totalAuthored: 82
+        totalCompleted: 388
+
+  Progress:
+    type: object
+    properties:
+      rank:
+        type: integer
+        format: int32
+      name:
+        type: string
+      color:
+        type: string
+      score:
+        type: integer
+        format: int32
+
+  # users/{user}/code-challenges/authored returns {data: [AuthoredCodeChallenge]}
+  AuthoredCodeChallenge:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      rank:
+        type: integer
+        format: int32
+        x-nullable: true
+      rankName:
+        type: string
+        x-nullable: true
+      tags:
+        type: array
+        items:
+          type: string
+      languages:
+        type: array
+        items:
+          type: string
+    example:
+      id: 5571d9fc11526780a000011a
+      name: 'The builder of things'
+      description: |
+        For this kata you will be using some meta-programming magic to create a new `Thing` object. This object will allow you to define things in a descriptive **sentence like format**.
+      rank: -2
+      rankName: '2 kyu'
+      tags:
+      - Algorithms
+      - Metaprogramming
+      - Programming Paradigms
+      - Advanced Language Features
+      - Fundamentals
+      - Domain Specific Languages
+      - Declarative Programming
+      languages:
+      - ruby
+      - javascript
+      - python
+
+  # users/{user}/code-challenges/completed returns {data: [CompletedCodeChallenge]}
+  CompletedCodeChallenge:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      slug:
+        type: string
+      completedLanguages:
+        type: array
+        items:
+          type: string
+      completedAt:
+        type: string
+        format: date-time
+
+  # code-challenges/{name}
+  CodeChallengeInfo:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      slug:
+        type: string
+      url:
+        type: string
+      description:
+        type: string
+      category:
+        type: string
+
+      publishedAt:
+        type: string
+        format: date-time
+      createdAt:
+        type: string
+        format: date-time
+      createdBy:
+        $ref: '#/definitions/User'
+
+      approvedAt:
+        type: string
+        format: date-time
+      approvedBy:
+        $ref: '#/definitions/User'
+
+      totalAttempts:
+        type: integer
+        format: int32
+      totalCompleted:
+        type: integer
+        format: int32
+      totalStars:
+        type: integer
+        format: int32
+      voteScore:
+        type: integer
+        format: int32
+      contributorsWanted:
+        type: boolean
+      rank:
+        type: object
+        properties:
+          id:
+            type: integer
+            format: int32
+          name:
+            type: string
+          color:
+            type: string
+      tags:
+        type: array
+        items:
+          type: string
+      languages:
+        type: array
+        items:
+          type: string
+      unresolved:
+        type: object
+        properties:
+          issues:
+            type: integer
+            format: int32
+          suggestions:
+            type: integer
+            format: int32
+
+  Error:
+    type: object
+    properties:
+      success:
+        type: boolean
+      reason:
+        type: string
+    example:
+      success: false
+      reason: "not found"
+
+parameters:
+  userParam:
+    name: user
+    in: path
+    description: ID or username
+    required: true
+    type: string
+  challengeParam:
+    name: challenge
+    in: path
+    description: ID or slug
+    required: true
+    type: string
+
+
+#securityDefinitions:
+#  Authorization:
+#    type: apiKey
+#    name: Authorization
+#    in: header
+#  access_key:
+#    type: apiKey
+#    name: access_key
+#    in: query
+
+paths:
+  /users/{user}:
+    get:
+      summary: Get user information
+      tags:
+        - users
+      parameters:
+        - $ref: '#/parameters/userParam'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/UserInfo'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+      x-code-samples:
+        - lang: curl
+          source: |
+            curl "https://www.codewars.com/api/v1/users/jhoffner"
+
+  /users/{user}/code-challenges/authored:
+    get:
+      summary: Get authored code challenges
+      tags:
+        - users
+      parameters:
+        - $ref: '#/parameters/userParam'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/AuthoredCodeChallenge'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+
+  /users/{user}/code-challenges/completed:
+    get:
+      summary: Get completed code challenges
+      produces:
+        - application/json
+      tags:
+        - users
+      parameters:
+        - $ref: '#/parameters/userParam'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/CompletedCodeChallenge'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+
+  /code-challenges/{challenge}:
+    get:
+      summary: Get code challenge information
+      tags:
+        - code_challenges
+      parameters:
+        - $ref: '#/parameters/challengeParam'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CodeChallengeInfo'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Error'
+      x-code-samples:
+        - lang: curl
+          source: |
+            curl "https://www.codewars.com/api/v1/code-challenges/valid-braces"
