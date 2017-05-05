@@ -1,46 +1,43 @@
 # https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
 swagger: '2.0'
 
-produces:
-- application/json
-consumes:
-- application/json
-
-host: www.codewars.com
-basePath: /api/v1
-schemes:
-- http
-- https
-
 info:
   title: Codewars API
   version: '1'
-
   description: |
     The [Codewars](https://www.codewars.com) API is organized around REST.
     Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
     We use built-in HTTP features, like HTTP authentication and HTTP verbs.
     JSON will be returned in all responses from the API, including errors.
 
-    ## Authentication
+    # Authentication
 
     Codewars uses API access keys to allow access to restricted endpoints.
     Access keys are specific to a user account and can be found by navigating to your [Account Settings ](https://www.codewars.com/users/edit).
 
     It can be included either via a header:
 
-    `Authorization: {some-api-key}`
+    `Authorization: {API ACCESS TOKEN}`
 
     or by passing it as a parameter:
 
-    `?access_key={some-api-key}`
+    `?access_key={API ACCESS TOKEN}`
 
-    ## Errors
+    # Errors
 
     Codewars uses conventional HTTP response codes to indicate success or failure of an API request.
-
   x-logo:
     url: 'https://dev.codewars.com/images/logo-220ae435.png'
+
+host: www.codewars.com
+basePath: /api/v1
+schemes:
+- http
+- https
+consumes:
+- application/json
+produces:
+- application/json
 
 tags:
   - name: users
@@ -63,16 +60,21 @@ definitions:
     properties:
       username:
         type: string
+        example: jhoffner
       name:
         type: string
+        defaultValue: ""
       honor:
         type: integer
         format: int32
+        description: Earned honor points
       clan:
         type: string
+        description: Clan (company, school or organization)
       leaderboardPosition:
         type: integer
         format: int32
+        description: Position on the [overall leaderboard](https://www.codewars.com/users/leaderboard)
       skills:
         type: array
         items:
@@ -195,9 +197,9 @@ definitions:
         type: integer
         format: int32
       name:
-        type: string
+        $ref: '#/definitions/RankName'
       color:
-        type: string
+        $ref: '#/definitions/RankColor'
       score:
         type: integer
         format: int32
@@ -213,12 +215,9 @@ definitions:
       description:
         type: string
       rank:
-        type: integer
-        format: int32
-        x-nullable: true
+        $ref: '#/definitions/CodeChallengeRankID'
       rankName:
-        type: string
-        x-nullable: true
+        $ref: '#/definitions/CodeChallengeRankName'
       tags:
         type: array
         items:
@@ -231,7 +230,8 @@ definitions:
       id: 5571d9fc11526780a000011a
       name: 'The builder of things'
       description: |
-        For this kata you will be using some meta-programming magic to create a new `Thing` object. This object will allow you to define things in a descriptive **sentence like format**.
+        For this kata you will be using some meta-programming magic to create a new `Thing` object.
+        This object will allow you to define things in a descriptive **sentence like format**.
       rank: -2
       rankName: '2 kyu'
       tags:
@@ -264,6 +264,15 @@ definitions:
       completedAt:
         type: string
         format: date-time
+    example:
+      id: '50654ddff44f800200000004'
+      name: Multiply
+      slug: multiply
+      completedLanguages:
+      - javascript
+      - python
+      - java
+      completedAt: '2013-06-01T17:58:27Z'
 
   # code-challenges/{name}
   CodeChallengeInfo:
@@ -271,12 +280,16 @@ definitions:
     properties:
       id:
         type: string
+        description: ID
       name:
         type: string
+        description: Name
       slug:
         type: string
+        description: Slug
       url:
         type: string
+        description: URL
       description:
         type: string
       category:
@@ -315,12 +328,11 @@ definitions:
         type: object
         properties:
           id:
-            type: integer
-            format: int32
+            $ref: '#/definitions/CodeChallengeRankID'
           name:
-            type: string
+            $ref: '#/definitions/CodeChallengeRankName'
           color:
-            type: string
+            $ref: '#/definitions/CodeChallengeRankColor'
       tags:
         type: array
         items:
@@ -338,6 +350,48 @@ definitions:
           suggestions:
             type: integer
             format: int32
+    example:
+      id: 5571d9fc11526780a000011a
+      name: 'The builder of things'
+      slug: the-builder-of-things
+      category: algorithms
+      publishedAt: '2015-06-05T17:47:05Z'
+      approvedAt: '2017-03-14T22:19:53Z'
+      languages:
+      - ruby
+      - javascript
+      - python
+      url: 'https://www.codewars.com/kata/the-builder-of-things'
+      rank:
+        id: -2
+        name: '2 kyu'
+        color: purple
+      createdAt: '2015-06-05T17:18:52Z'
+      createdBy:
+        username: jhoffner
+        url: 'https://www.codewars.com/users/jhoffner'
+      approvedBy:
+        username: jhoffner
+        url: 'https://www.codewars.com/users/jhoffner'
+      description: |-
+        For this kata you will be using some meta-programming magic to create a new `Thing` object.
+        This object will allow you to define things in a descriptive **sentence like format**.
+      totalAttempts: 1034
+      totalCompleted: 74
+      totalStars: 53
+      voteScore: 40
+      tags:
+      - Algorithms
+      - Metaprogramming
+      - Programming Paradigms
+      - Advanced Language Features
+      - Fundamentals
+      - Domain Specific Languages
+      - Declarative Programming
+      contributorsWanted: true
+      unresolved:
+        issues: 0
+        suggestions: 0
 
   Error:
     type: object
@@ -350,35 +404,123 @@ definitions:
       success: false
       reason: "not found"
 
+  CodeChallengeRankID:
+    type: integer
+    format: int32
+    x-nullable: true
+
+  CodeChallengeRankName:
+    type: string
+    x-nullable: true
+    enum:
+      - 1 kyu
+      - 2 kyu
+      - 3 kyu
+      - 4 kyu
+      - 5 kyu
+      - 6 kyu
+      - 7 kyu
+      - 8 kyu
+
+  CodeChallengeRankColor:
+    type: string
+    x-nullable: true
+    enum:
+      - purple
+      - blue
+      - yellow
+      - white
+
+  CodeChallengeCategory:
+    type: string
+    enum:
+      - bug_fixes
+      - fundamentals
+      - algorithms
+      - games
+
+  RankID:
+    type: integer
+    format: int32
+
+  RankName:
+    type: string
+    enum:
+      - 2 dan
+      - 1 dan
+      - 1 kyu
+      - 2 kyu
+      - 3 kyu
+      - 4 kyu
+      - 5 kyu
+      - 6 kyu
+      - 7 kyu
+      - 8 kyu
+
+  RankColor:
+    type: string
+    enum:
+      - black
+      - purple
+      - blue
+      - yellow
+      - white
+
 parameters:
   userParam:
+    type: string
     name: user
     in: path
     description: ID or username
     required: true
-    type: string
   challengeParam:
+    type: string
     name: challenge
     in: path
     description: ID or slug
     required: true
-    type: string
 
+securityDefinitions:
+  Authorization:
+    type: apiKey
+    name: Authorization
+    in: header
+  access_key:
+    type: apiKey
+    name: access_key
+    in: query
 
-#securityDefinitions:
-#  Authorization:
-#    type: apiKey
-#    name: Authorization
-#    in: header
-#  access_key:
-#    type: apiKey
-#    name: access_key
-#    in: query
+responses:
+  '200':
+    description: Success
+
+  '400':
+    description: Bad Request – Something went wrong
+  '401':
+    description: Unauthorized – Your API key is wrong
+  '403':
+    description: Forbidden – You do not have permission to access this resource
+  '404':
+    description: Not Found – The specified resource could not be found
+  '405':
+    description: Method Not Allowed – You tried to access a resource with an invalid method
+  '406':
+    description: Not Acceptable – You requested a format that isn’t json
+  '422':
+    description: Unprocessable Entity – Your input failed validation.
+  '429':
+    description: Too Many Requests – You’re making too many API requests.
+
+  '500':
+    description: Internal Server Error – We had a problem with our server. Try again later.
+  '503':
+    description: Service Unavailable – We’re temporarily offline for maintenance. Please try again later.
 
 paths:
   /users/{user}:
     get:
       summary: Get user information
+      operationId: getUser
       tags:
         - users
       parameters:
@@ -400,6 +542,7 @@ paths:
   /users/{user}/code-challenges/authored:
     get:
       summary: Get authored code challenges
+      operationId: getAuthoredCodeChallenges
       tags:
         - users
       parameters:
@@ -422,6 +565,7 @@ paths:
   /users/{user}/code-challenges/completed:
     get:
       summary: Get completed code challenges
+      operationId: getCompletedCodeChallenges
       produces:
         - application/json
       tags:
@@ -446,6 +590,7 @@ paths:
   /code-challenges/{challenge}:
     get:
       summary: Get code challenge information
+      operationId: getCodeChallenge
       tags:
         - code_challenges
       parameters:
@@ -462,4 +607,4 @@ paths:
       x-code-samples:
         - lang: curl
           source: |
-            curl "https://www.codewars.com/api/v1/code-challenges/valid-braces"
+            curl "https://www.codewars.com/api/v1/code-challenges/the-builder-of-things"
