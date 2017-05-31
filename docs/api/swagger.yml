@@ -42,7 +42,7 @@ produces:
 tags:
   - name: users
     description: Operations about user
-  - name: code_challenges
+  - name: code-challenges
     x-displayName: Code Challenges
     description: Code Challenges
 
@@ -65,7 +65,6 @@ definitions:
         example: jhoffner
       name:
         type: string
-        defaultValue: ""
         example: Jake Hoffner
       honor:
         type: integer
@@ -460,20 +459,6 @@ definitions:
       - yellow
       - white
 
-  CodeChallengeCategory:
-    description: Code challenge category
-    type: string
-    enum:
-      - bug_fixes
-      - fundamentals
-      - algorithms
-      - games
-
-  RankID:
-    deescription: User rank ID
-    type: integer
-    format: int32
-
   RankName:
     description: User rank name
     type: string
@@ -660,7 +645,7 @@ paths:
         Returns information about `challenge`.
       operationId: getCodeChallenge
       tags:
-        - code_challenges
+        - code-challenges
       parameters:
         - $ref: '#/parameters/challengeParam'
       responses:
