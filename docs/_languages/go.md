@@ -7,6 +7,6 @@ tests:
   - Ginkgo
 packages: []
 services: []
-timeout: 15000ms
+timeout: 15 seconds
 docker_image: codewars/go-runner
 ---

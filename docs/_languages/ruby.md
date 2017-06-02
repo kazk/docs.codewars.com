@@ -58,6 +58,6 @@ packages:
   - symbolic
   - unit
 services: []
-timeout: 12000ms
+timeout: 12 seconds
 docker_image: codewars/ruby-runner
 ---

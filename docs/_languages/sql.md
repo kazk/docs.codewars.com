@@ -8,6 +8,6 @@ tests:
   - RSpec
 packages: []
 services: []
-timeout: 14000ms
+timeout: 14 seconds
 docker_image: codewars/ruby-runner
 ---

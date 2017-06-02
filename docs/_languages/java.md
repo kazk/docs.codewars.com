@@ -7,6 +7,6 @@ tests:
   - JUnit
 packages: []
 services: []
-timeout: 12000ms
+timeout: 12 seconds
 docker_image: codewars/jvm-runner
 ---

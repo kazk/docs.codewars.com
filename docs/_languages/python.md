@@ -20,6 +20,6 @@ services:
   - sqlite
   - redis-server
   - mongodb
-timeout: 12000ms
+timeout: 12 seconds
 docker_image: codewars/python-runner
 ---

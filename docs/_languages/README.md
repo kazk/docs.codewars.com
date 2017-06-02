@@ -21,17 +21,21 @@ no_overview:  Disables the language overview if set to `true`.
 
 ```
 ---
-title:      JavaScript
-language:   javascript
-versions:   [Node v0.10.x, Node v0.10.x/Babel, Node v6.6.x, Node v6.6.x/Babel]
-tests:      [Codewars, Mocha BDD, Mocha TDD]
-packages:   [] # TODO
+title: JavaScript
+language: javascript
+versions:
+  - Node v0.10.x
+  - Node v6.6.x
+tests:
+  - Codewars
+  - Mocha
+packages: [] # TODO
 services:
   - sqlite3
   - redis
   - mongodb
-timeout:    12000ms
-docker_image:     codewars/node-runner
+timeout: 12 seconds
+docker_image: codewars/node-runner
 ---
 ```
 

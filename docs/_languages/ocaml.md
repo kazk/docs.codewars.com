@@ -9,6 +9,6 @@ packages:
   - Jane Street Core
   - Batteries
 services: []
-timeout: 12000ms
+timeout: 12 seconds
 docker_image: codewars/ocaml-runner
 ---

@@ -14,6 +14,6 @@ packages:
   - persistent-template
   - split
 services: []
-timeout: 15000ms
+timeout: 15 seconds
 docker_image: codewars/haskell-runner
 ---
