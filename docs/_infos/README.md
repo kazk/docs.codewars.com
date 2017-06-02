@@ -8,3 +8,10 @@ introductions to Codewars platform.
 - Key concepts
 - Terminology
 - Community
+
+## TODO
+
+- Organize information
+- Avoid using unfamiliar terms without introducing them
+  - Example: Beta Kata Process uses "sensei".
+- Improve consistency. kyu, kyū, Kyu.

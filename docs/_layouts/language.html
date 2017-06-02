@@ -4,15 +4,7 @@
 {% include head.html %}
 
 <body>
-  <header>
-    <nav class="pt1">
-      <ol class="list">
-        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
-        <span>/</span>
-        <li class="dib"><a href="{{ '/languages' | relative_url }}" title="Supported Languages">Languages</a></li>
-      </ol>
-    </nav>
-  </header>
+  {% include top_navigation.html %}
 
 	<div class="ph2 center mw7">
     <h1 class="lh-title mv1">{{ page.title }}</h1>

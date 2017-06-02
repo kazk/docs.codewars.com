@@ -1,13 +1,14 @@
+# maps language tag to proper display name
 ---
 c: C
 clojure: Clojure
 coffeescript: CoffeeScript
 cpp: C++
 crystal: Crystal
-csharp: C#
+csharp: 'C#'
 dart: Dart
 elixir: Elixir
-fsharp: F#
+fsharp: 'F#'
 go: Go
 haskell: Haskell
 java: Java

@@ -75,6 +75,7 @@ docker run --rm --label=jekyll \
   - Consistent
   - Add links to Codewars/GitHub/Gitter
 
+- Document trade-offs, issues and reasons behind some decisions
 
 ## Known Issues/Concerns
 

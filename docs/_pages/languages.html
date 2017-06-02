@@ -2,21 +2,16 @@
 title: Languages
 permalink: /languages/
 ---
+
 <!DOCTYPE html>
 <html>
 {% include head.html %}
 
 <body>
-  <header>
-    <nav class="pt1">
-      <ol class="list">
-        <li class="dib"><a href="{{ '/' | relative_url }}" title="Codewars Documentation">Home</a></li>
-      </ol>
-    </nav>
-  </header>
+  {% include top_navigation.html %}
 
-  <main class="center">
-    <h1 class="mb1 lh-title">Languages</h1>
+  <main class="center pt4 pt0-l">
+    <h1 class="mb1 lh-title">{{ page.title }}</h1>
 
     <table class="center collapse w-90 w-80-ns">
       <thead>
@@ -35,7 +30,7 @@ permalink: /languages/
         {% if n == 1 %}
           <tr class="lh-copy">
             <td class="pl2{{ darken }}"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>
-            <td class="pl2{{ darken }}">{{ p.versions[0] }}</td>
+            <td class="pl2{{ darken }}">{{ p.versions | first }}</td>
             <td class="pl2{{ darken }}">{{ p.tests | join: '<br>' }}</td>
           </tr>
         {% else %}

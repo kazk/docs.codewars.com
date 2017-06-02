@@ -2,7 +2,7 @@
 title: Ranking
 ---
 
-## Kyu/Dan Ranks {#ranks}
+## Kyu/Dan Ranks
 
 Each kata on the site is set to a Kyu/Dan rank, based on its subject area and difficulty.
 The community collectively determines rank in the Beta Process.
@@ -16,7 +16,7 @@ This is why they count downward.  Once you reach master level, we count upward.
 
 Currently Dan level content is reserved for later.  You will only find Kyu level content to train on for now.
 
-## Earning Ranks {#earning-ranks}
+## Earning Ranks
 
 Currently we use an algorithm that advances you based on how hard the kata is compared to your current rank
 -- the harder the kata the faster you advance.
