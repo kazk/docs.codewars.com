@@ -6,8 +6,8 @@
 <body>
   {% include top_navigation.html %}
 
-	<div class="ph2 center mw7">
-    <h1 class="lh-title mv1">{{ page.title }}</h1>
+	<main class="pt4 pt0-l ph2 center mw7">
+    <h1>{{ page.title }}</h1>
     {% unless page.no_overview %}{% include language_overview.html %}{% endunless %}
 
     {% assign text = content | strip %}
@@ -38,7 +38,7 @@
         </ul>
       {% endfor %}
     {% endunless %}
-	</div>
+	</main>
 
   {% include footer.html %}
 </body>
