@@ -1,10 +1,3 @@
-## Goals
-
-- Easy to contribute
-- Easy to maintain
-- Easy to find
-
-
 ## Collections
 
 ### `languages`
@@ -96,6 +89,28 @@ There're some syntax highlighting issues because Jekyll uses older version of Ro
 It's possible to use client side syntax highlighters like
 [Prism](http://prismjs.com/examples.html) by disabling Rouge if needed.
 
+```yaml
+highlighter: none
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    disable: true
+```
+
+### `@mention`
+
+Currently disabled because it interferes with code.
+`@username` automatically generates a link to `codewars.com/users/username` if enabled.
+
+Include the following in `_config.yml` to enable this.
+
+```yaml
+gems:
+  - jekyll-mentions
+
+jekyll-mentions:
+  base_url: https://www.codewars.com/users
+```
 
 ### Directory Structure
 

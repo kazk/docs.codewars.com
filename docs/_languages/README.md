@@ -6,16 +6,16 @@ Collection of general environment information for each supported language.
 
 ```
 ---
-title:     Title/Display Name
-language:  Language tag
-versions:  List of supported versions
-tests:     List of supported test frameworks
-packages:  List of installed packages
-services:  List of services
-timeout:   String describing the allowed execution time
-runner:    Docker image name
+title:        Title/Display Name
+language:     Language tag
+versions:     List of supported versions
+tests:        List of supported test frameworks
+packages:     List of installed packages
+services:     List of services
+timeout:      String describing the allowed execution time
+docker_image: Docker image name
 
-no_overview: Disables the language overview if set to `true`.
+no_overview:  Disables the language overview if set to `true`.
 ---
 ```
 
@@ -31,7 +31,7 @@ services:
   - redis
   - mongodb
 timeout:    12000ms
-runner:     codewars/node-runner
+docker_image:     codewars/node-runner
 ---
 ```
 

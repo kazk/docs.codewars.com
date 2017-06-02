@@ -1,3 +1,4 @@
+---
 - {name: Vote Code Challenge,        points:   25}
 - {name: Mark Comment As Spoiler,    points:   50}
 - {name: Create Code Challenge,      points:   75}
@@ -12,5 +13,3 @@
 
 #- {name: Estimate your own kata rank,         points:  75}
 # probably meaningless now because anyone who can create kata has this ability
-
-

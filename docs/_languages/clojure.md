@@ -1,10 +1,12 @@
 ---
-title:    Clojure
+title: Clojure
 language: clojure
-versions: [1.8.0]
-tests:    [clojure.test]
+versions:
+  - '1.8.0'
+tests:
+  - clojure.test
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/jvm-runner
+timeout: 12000ms
+docker_image: codewars/jvm-runner
 ---

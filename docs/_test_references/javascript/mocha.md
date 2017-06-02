@@ -1,21 +1,47 @@
 ---
-title: Mocha Testing Framework (BDD)
+title: Mocha Testing Framework
 language: javascript
 ---
 
-# Mocha Testing Framework (BDD)
+# Mocha Testing Framework
 
-Codewars supports the Mocha testing framework, in a BDD or TDD setup.
+Codewars supports [Mocha](http://mochajs.org/) testing framework in BDD and TDD interfaces.
 
-The following is a Mocha BDD example on how to use the framework using the built in Node.js assertion library:
+## Interfaces
+
+### Mocha BDD
+
+BDD interface provides `describe()`, `context()`, `it()`, `specify()`, `before()`, `after()`, `beforeEach()`, and `afterEach()`:
 
 ```javascript
-var assert = require("assert");
+const assert = require("assert");
 describe('Array', function() {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
+  before(function() {
+    // ...
+  });
+
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
       assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
+    });
+  });
+});
+```
+
+### Mocha TDD
+
+TDD interface provides `suite()`, `test()`, `suiteSetup()`, `suiteTeardown()`, `setup()`, and `teardown()`:
+
+```javascript
+const assert = require("assert");
+suite('Array', function() {
+  setup(function() {
+    // ...
+  });
+
+  suite('#indexOf()', function() {
+    test('should return -1 when not present', function() {
+      assert.equal(-1, [1,2,3].indexOf(5));
     });
   });
 });
@@ -66,7 +92,7 @@ assert.lengthOf(tea.flavors, 3);
 
 ## NPM Packages
 
-The following test related packages are loaded into the VM and available for use:
+The following test related packages are available:
 
 * should
 * expect
@@ -80,15 +106,10 @@ The following test related packages are loaded into the VM and available for use
 * chai-change
 * chai-subset
 
-## Learn More
-
-You can learn more on the [Mocha website](http://mochajs.org/).
-
-
-
 {% comment %}
 
 - <https://www.qualified.io/kb/languages/javascript/mocha_bdd>
+- <https://www.qualified.io/kb/languages/javascript/mocha_tdd>
 
 - Fixed broken link to Chai
 

@@ -4,7 +4,7 @@ swagger: '2.0'
 info:
   title: Codewars API
   version: '1'
-  description: |
+  description: |-
     The [Codewars](https://www.codewars.com) API is organized around REST.
     Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
     We use built-in HTTP features, like HTTP authentication and HTTP verbs.
@@ -13,7 +13,7 @@ info:
     # Authentication
 
     Codewars uses API access keys to allow access to restricted endpoints.
-    Access keys are specific to a user account and can be found by navigating to your [Account Settings ](https://www.codewars.com/users/edit).
+    Access keys are specific to a user account and can be found by navigating to your [Account Settings](https://www.codewars.com/users/edit).
 
     It can be included either via a header:
 
@@ -26,18 +26,19 @@ info:
     # Errors
 
     Codewars uses conventional HTTP response codes to indicate success or failure of an API request.
-  x-logo:
+
+  x-logo: # TODO: update this URL after migrating
     url: https://kazk.github.io/docs.codewars.com/assets/img/logo.png
 
 host: www.codewars.com
 basePath: /api/v1
 schemes:
-- http
-- https
+  - http
+  - https
 consumes:
-- application/json
+  - application/json
 produces:
-- application/json
+  - application/json
 
 tags:
   - name: users
@@ -112,13 +113,13 @@ definitions:
       clan: "Codewars"
       leaderboardPosition: 9
       skills:
-      - "ruby"
-      - "c#"
-      - ".net"
-      - "javascript"
-      - "coffeescript"
-      - "nodejs"
-      - "rails"
+        - "ruby"
+        - "c#"
+        - ".net"
+        - "javascript"
+        - "coffeescript"
+        - "nodejs"
+        - "rails"
       ranks:
         overall:
           rank: -3
@@ -237,23 +238,23 @@ definitions:
     example:
       id: 5571d9fc11526780a000011a
       name: 'The builder of things'
-      description: |
+      description: |-
         For this kata you will be using some meta-programming magic to create a new `Thing` object.
         This object will allow you to define things in a descriptive **sentence like format**.
       rank: -2
       rankName: '2 kyu'
       tags:
-      - Algorithms
-      - Metaprogramming
-      - Programming Paradigms
-      - Advanced Language Features
-      - Fundamentals
-      - Domain Specific Languages
-      - Declarative Programming
+        - Algorithms
+        - Metaprogramming
+        - Programming Paradigms
+        - Advanced Language Features
+        - Fundamentals
+        - Domain Specific Languages
+        - Declarative Programming
       languages:
-      - ruby
-      - javascript
-      - python
+        - ruby
+        - javascript
+        - python
 
   # users/{user}/code-challenges/completed
   CompletedCodeChallenge:
@@ -277,9 +278,9 @@ definitions:
         items:
           type: string
         example:
-        - javascript
-        - java
-        - python
+          - javascript
+          - java
+          - python
       completedAt:
         description: Completed at
         type: string
@@ -383,9 +384,9 @@ definitions:
       publishedAt: '2015-06-05T17:47:05Z'
       approvedAt: '2017-03-14T22:19:53Z'
       languages:
-      - ruby
-      - javascript
-      - python
+        - ruby
+        - javascript
+        - python
       url: 'https://www.codewars.com/kata/the-builder-of-things'
       rank:
         id: -2
@@ -406,13 +407,13 @@ definitions:
       totalStars: 53
       voteScore: 40
       tags:
-      - Algorithms
-      - Metaprogramming
-      - Programming Paradigms
-      - Advanced Language Features
-      - Fundamentals
-      - Domain Specific Languages
-      - Declarative Programming
+        - Algorithms
+        - Metaprogramming
+        - Programming Paradigms
+        - Advanced Language Features
+        - Fundamentals
+        - Domain Specific Languages
+        - Declarative Programming
       contributorsWanted: true
       unresolved:
         issues: 0
@@ -498,40 +499,41 @@ parameters:
     description: ID or slug
     required: true
 
+# none of the documented endpoints require `access_key`
 securityDefinitions:
-  Authorization:
+  AuthorizationHeader:
     type: apiKey
     name: Authorization
     in: header
-  access_key:
+  AccessKeyQuery:
     type: apiKey
     name: access_key
     in: query
 
 responses:
-  '200':
+  200:
     description: Success
 
-  '400':
+  400:
     description: Bad Request – Something went wrong
-  '401':
+  401:
     description: Unauthorized – Your API key is wrong
-  '403':
+  403:
     description: Forbidden – You do not have permission to access this resource
-  '404':
+  404:
     description: Not Found – The specified resource could not be found
-  '405':
+  405:
     description: Method Not Allowed – You tried to access a resource with an invalid method
-  '406':
+  406:
     description: Not Acceptable – You requested a format that isn’t json
-  '422':
+  422:
     description: Unprocessable Entity – Your input failed validation.
-  '429':
+  429:
     description: Too Many Requests – You’re making too many API requests.
 
-  '500':
+  500:
     description: Internal Server Error – We had a problem with our server. Try again later.
-  '503':
+  503:
     description: Service Unavailable – We’re temporarily offline for maintenance. Please try again later.
 
 paths:
@@ -546,17 +548,17 @@ paths:
       parameters:
         - $ref: '#/parameters/userParam'
       responses:
-        '200':
+        200:
           description: Success
           schema:
             $ref: '#/definitions/UserInfo'
-        '404':
+        404:
           description: Not Found
           schema:
             $ref: '#/definitions/Error'
       x-code-samples:
         - lang: curl
-          source: |
+          source: |-
             curl "https://www.codewars.com/api/v1/users/jhoffner"
 
   /users/{user}/code-challenges/authored:
@@ -570,7 +572,7 @@ paths:
       parameters:
         - $ref: '#/parameters/userParam'
       responses:
-        '200':
+        200:
           description: Success
           schema:
             type: object
@@ -579,13 +581,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/AuthoredCodeChallenge'
-        '404':
+        404:
           description: Not Found
           schema:
             $ref: '#/definitions/Error'
       x-code-samples:
         - lang: curl
-          source: |
+          source: |-
             curl "https://www.codewars.com/api/v1/users/jhoffner/code-challenges/authored"
 
   /users/{user}/code-challenges/completed:
@@ -609,7 +611,7 @@ paths:
           default: 0
           description: Pagination offset (zero-based)
       responses:
-        '200':
+        200:
           description: Success
           schema:
             type: object
@@ -629,13 +631,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/CompletedCodeChallenge'
-        '404':
+        404:
           description: Not Found
           schema:
             $ref: '#/definitions/Error'
       x-code-samples:
         - lang: curl
-          source: |
+          source: |-
             curl "https://www.codewars.com/api/v1/users/jhoffner/code-challenges/completed"
 
   /code-challenges/{challenge}:
@@ -659,5 +661,5 @@ paths:
             $ref: '#/definitions/Error'
       x-code-samples:
         - lang: curl
-          source: |
+          source: |-
             curl "https://www.codewars.com/api/v1/code-challenges/the-builder-of-things"

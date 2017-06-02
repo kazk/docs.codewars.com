@@ -1,10 +1,15 @@
 ---
-title:    Shell
+title: Shell
 language: shell
-versions: [bash, csh, tcsh, dash]
-tests:    [RSpec]
+versions:
+  - bash
+  - csh
+  - tcsh
+  - dash
+tests:
+  - RSpec
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/ruby-runner
+timeout: 12000ms
+docker_image: codewars/ruby-runner
 ---

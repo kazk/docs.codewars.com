@@ -1,18 +1,35 @@
 ---
-title: Criterion Testing Framework
+title: Criterion
 language: c
+
+basic_setup: |-
+  ```c
+  int add(int a, int b) {
+    return a + b;
+  }
+  ```
+
+  ```c
+  #include <criterion/criterion.h>
+
+  int add(int, int);
+
+  Test(basic_test, should_add_numbers) {
+    cr_assert_eq(2, add(1, 1));
+  }
+  ```
+
 ---
 
+# {{ page.title }}
 
-# Criterion Testing Framework
+[Criterion](https://github.com/Snaipe/Criterion) can be used to test C code.
+See the [documentation](https://criterion.readthedocs.io/en/master/) to learn more.
 
-## Overview
+## Basic Setup
 
-Codewars supports the [Criterion](https://github.com/Snaipe/Criterion) testing framework.
+{{ page.basic_setup | markdownify }}
 
-## Learn More
-
-You can learn more from the [Criterion documentation](http://criterion.readthedocs.io/en/master/).
 
 {% comment %}
 

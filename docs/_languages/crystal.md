@@ -1,10 +1,12 @@
 ---
-title:    Crystal
+title: Crystal
 language: crystal
-versions: [0.21.1]
-tests:    [Spec]
+versions:
+  - 0.21.1
+tests:
+  - Spec
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/crystal-runner
+timeout: 12000ms
+docker_image: codewars/crystal-runner
 ---

@@ -1,10 +1,12 @@
 ---
-title:    Dart
+title: Dart
 language: dart
-versions: [1.16.1]
-tests:    [test]
+versions:
+  - 1.16.1
+tests:
+  - test
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/dart-runner
+timeout: 12000ms
+docker_image: codewars/dart-runner
 ---

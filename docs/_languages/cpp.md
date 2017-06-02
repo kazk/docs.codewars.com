@@ -1,10 +1,12 @@
 ---
-title:    C++
+title: C++
 language: cpp
-versions: ['14']
-tests:    [Igloo]
+versions:
+  - '14'
+tests:
+  - Igloo
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/systems-runner
+timeout: 12000ms
+docker_image: codewars/systems-runner
 ---

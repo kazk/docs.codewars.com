@@ -1,0 +1,16 @@
+<dl>
+  <dt>Versions</dt>{% for v in page.versions %}<dd>{{ v }}</dd>{% endfor %}
+
+  <dt>Test Frameworks</dt>
+  {% for x in page.tests %}<dd>{{ x }}</dd>{% else %}<dd>No Test Integration</dd>{% endfor %}
+
+  {% if page.timeout %}<dt>Timeout</dt><dd>{{ page.timeout }}</dd>{% endif %}
+
+  <dt>Installed Packages</dt>
+  {% for x in page.packages %}<dd>{{ x }}</dd>{% else %}<dd>None</dd>{% endfor %}
+
+  <dt>Services</dt>
+  {% for x in page.services %}<dd>{{ x }}</dd>{% else %}<dd>None</dd>{% endfor %}
+
+  {% if page.docker_image %}<dt>Docker Image</dt><dd>{{ page.docker_image }}</dd>{% endif %}
+</dl>

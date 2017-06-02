@@ -3,9 +3,7 @@ title: NUnit Testing Framework
 language: csharp
 ---
 
-# NUnit Testing Framework
-
-## Overview
+# {{ page.title }}
 
 Codewars supports the [NUnit](http://www.nunit.org/) testing framework.
 

@@ -16,7 +16,7 @@ For experienced developers looking for a challenge, you can select the "Rank Up"
 which will cause you to begin with easy to medium challenges and quickly advance to harder ones.
 
 For those really looking for a hard challenge,
-we recommend you go directly to the full list of kata where you can select from over 3 thousand kata to train on.
+we recommend you go directly to the full list of kata where you can select from over 3000 kata to train on.
 Remember, 1 kyū is the hardest level.
 
 Go ahead and get started by training on a kata now!

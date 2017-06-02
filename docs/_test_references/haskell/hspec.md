@@ -5,10 +5,8 @@ language: haskell
 
 # hspec Testing Framework
 
-## Overview
-
 Codewars supports [hspec](https://hackage.haskell.org/package/hspec-meta-1.10.0),
-a _Behavior Driven Development_ (BDD) test framework for Haskell modeled after
+a BDD test framework for Haskell modeled after
 Ruby's popular [Rspec](http://rspec.info/) framework.
 
 For more information, see: <http://hspec.github.io>.

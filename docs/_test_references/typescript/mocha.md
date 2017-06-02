@@ -1,24 +1,47 @@
 ---
-title: Mocha Testing Framework (TDD)
+title: Mocha Testing Framework
 language: typescript
 ---
 
-# Mocha Testing Framework (TDD)
+# Mocha Testing Framework
 
-Codewars supports the [Mocha](http://mochajs.org/) testing framework, in a BDD or TDD setup.
+Codewars supports [Mocha](http://mochajs.org/) testing framework in BDD and TDD interfaces.
 
-The following is a Mocha TDD example on how to use the framework using the built in Node.js assertion library:
+## Interfaces
+
+### Mocha BDD
+
+BDD interface provides `describe()`, `context()`, `it()`, `specify()`, `before()`, `after()`, `beforeEach()`, and `afterEach()`:
 
 ```typescript
-var assert = require("assert");
+import * as assert from 'assert';
+
+describe('Array', function() {
+  before(function() {
+    // ...
+  });
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal(-1, [1,2,3].indexOf(5));
+    });
+  });
+});
+```
+
+### Mocha TDD
+
+TDD interface provides `suite()`, `test()`, `suiteSetup()`, `suiteTeardown()`, `setup()`, and `teardown()`:
+
+```typescript
+import * as assert from 'assert';
+
 suite('Array', function() {
   setup(function() {
     // ...
   });
-
   suite('#indexOf()', function() {
     test('should return -1 when not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
+      assert.equal(-1, [1,2,3].indexOf(5));
     });
   });
 });
@@ -37,7 +60,8 @@ It supports the following assertion styles:
 #### Should
 
 ```typescript
-require("chai").should();
+import { should } from 'chai';
+should();
 
 foo.should.be.a('string');
 foo.should.equal('bar');
@@ -48,7 +72,7 @@ tea.should.have.property('flavors').with.length(3);
 #### Expect
 
 ```typescript
-var expect = require("chai").expect;
+import { expect } from 'chai';
 
 expect(foo).to.be.a('string');
 expect(foo).to.equal('bar');
@@ -59,7 +83,7 @@ expect(tea).to.have.property('flavors').with.length(3);
 #### Assert
 
 ```typescript
-var assert = require("chai").assert;
+import { assert } from 'chai';
 
 assert.typeOf(foo, 'string');
 assert.equal(foo, 'bar');
@@ -68,10 +92,9 @@ assert.property(tea, 'flavors');
 assert.lengthOf(tea.flavors, 3);
 ```
 
-
 ## NPM Packages
 
-The following test related packages are loaded into the VM and available for use:
+The following test related packages are available:
 
 * should
 * expect
@@ -85,30 +108,12 @@ The following test related packages are loaded into the VM and available for use
 * chai-change
 * chai-subset
 
-## Learn More
-
-You can learn more on the [Mocha website](http://mochajs.org/).
-
-
 {% comment %}
 
+- <https://www.qualified.io/kb/languages/typescript/mocha_bdd>
 - <https://www.qualified.io/kb/languages/typescript/mocha_tdd>
 
 - Fixed the broken link to Chai
-
-- Should fix to use TypeScript syntax in assertion style examples.
-
-```typescript
-import { should } from 'chai';
-should();
-```
-
-```typescript
-import { expect } from 'chai';
-```
-
-```typescript
-import { assert } from 'chai';
-```
-
+- Fixed Node.js `assert` not used in the first example
+- Fixed assertion style examples to use TypeScript syntax
 {% endcomment %}

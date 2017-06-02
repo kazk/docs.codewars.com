@@ -1,7 +1,8 @@
 title:       Codewars Documentation
 description: Documentation for Codewars
 
-# This might be useful when reusing the documentation for Qualified.
+# platform: Codewars
+# This might be useful if we decide to share the documentation with Qualified.
 # Replace 'Codewars' in the documentation with '{{ site.platform }}'
 # and override the value with additional config file when building.
 # It should be possible to extend this to support words/paragraph switching by
@@ -10,8 +11,9 @@ description: Documentation for Codewars
 # To make this work with front matters,
 # a workaround using a placeholder is necessary.
 # '{{ page.title | replace: "%PLATFORM%", site.platform }}'
-# platform: Codewars
 
+# TODO: Set `url` to `'docs.codewars.com'` after configuring custom domain
+# TODO: Set `baseurl` to `''` after configuring custom domain
 url: ""
 baseurl: "/docs.codewars.com"
 
@@ -27,16 +29,16 @@ collections:
     permalink: /languages/:path/
   references:
     output: true
-    permalink: /references/:path/
+    permalink: /:collection/:path/
   tutorials:
     output: true
-    permalink: /tutorials/:path/
+    permalink: /:collection/:path/
   recipes:
     output: true
     permalink: /cookbook/:path/
   json:
     output: true
-    permalink: /json/:path
+    permalink: /:collection/:path
 
 defaults:
   - scope:
@@ -77,31 +79,23 @@ defaults:
 
 # Build settings
 highlighter: rouge
-# highlighter: none
 markdown: kramdown
 kramdown:
   input: GFM
   auto_ids: true
   hard_wrap: false
   syntax_highlighter: rouge
-  # syntax_highlighter_opts: {disable: true}
-  entity_output:  as_char
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  toc_levels:     1..6
-  footnote_nr:    1
+  entity_output: as_char
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  toc_levels: 1..6
+  footnote_nr: 1
 
 sass:
   sass_dir: _scss
   style: compressed
 
-include: ["_pages"]
-
-# Disabling @mention support because it's causing issues with code.
-# gems:
-#   - jekyll-mentions
-#
-# jekyll-mentions:
-#   base_url: https://www.codewars.com/users
+include:
+  - _pages
 
 exclude:
   - Gemfile

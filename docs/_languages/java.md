@@ -1,10 +1,12 @@
 ---
-title:    Java
+title: Java
 language: java
-versions: [1.8.0_91]
-tests:    [JUnit]
+versions:
+  - 1.8.0_91
+tests:
+  - JUnit
 packages: []
 services: []
-timeout:  12000ms
-runner:   codewars/jvm-runner
+timeout: 12000ms
+docker_image: codewars/jvm-runner
 ---

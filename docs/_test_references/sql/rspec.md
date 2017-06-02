@@ -3,7 +3,7 @@ title: RSpec Testing Framework for SQL
 language: sql
 ---
 
-# RSpec Testing Framework for SQL
+# {{ page.title }}
 
 Codewars supports the RSpec behavior-driven testing framework, which uses Ruby.
 

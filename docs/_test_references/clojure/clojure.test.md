@@ -1,13 +1,12 @@
 ---
-title: clojure.test Testing Framework
+title: clojure.test
 language: clojure
 ---
 
-# clojure.test Testing Framework
+# {{ page.title }}
 
-## Overview
-
-Codewars supports [clojure.test](http://clojure.github.io/clojure/clojure.test-api.html), the built-in testing framework for Clojure 1.6.0
+Codewars supports [clojure.test](http://clojure.github.io/clojure/clojure.test-api.html),
+the built-in testing framework for Clojure 1.6.0.
 
 The following notes are largely derived from: [clojure.test - Clojure API Documentation](http://clojure.github.io/clojure/clojure.test-api.html).
 

@@ -1,13 +1,14 @@
 ---
-title:    OCaml
+title: OCaml
 language: ocaml
-versions: [4.02.3]
-tests:    [OUnit]
+versions:
+  - 4.02.3
+tests:
+  - OUnit
 packages:
-- Jane Street Core
-- Batteries
+  - Jane Street Core
+  - Batteries
 services: []
-timeout:  12000ms
-runner:   codewars/ocaml-runner
-is_beta:  true
+timeout: 12000ms
+docker_image: codewars/ocaml-runner
 ---
