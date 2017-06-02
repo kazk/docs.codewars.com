@@ -11,37 +11,23 @@ permalink: /languages/
   {% include top_navigation.html %}
 
   <main class="center pt4 pt0-l">
-    <h1 class="mb1 lh-title">{{ page.title }}</h1>
-
-    <table class="center collapse w-90 w-80-ns">
+    <table class="center collapse w-100 w-80-ns">
       <thead>
-        <tr class="lh-title tl">
-          <th class="pl2">Language</th>
-          <th class="pl2">Version</th>
-          <th class="pl2">Test Framework</th>
+        <tr>
+          <th class="pa2 tl">Language</th>
+          <th class="pa2 tl">Version</th>
+          <th class="pa2 tl">Test Framework</th>
         </tr>
       </thead>
 
       <tbody>
       {% assign langs = site.languages | sort 'language' %}
       {% for p in langs %}
-        {% assign n = p.versions.size %}
-        {% capture darken %}{% cycle ' darken-bg', '' %}{% endcapture %}
-        {% if n == 1 %}
-          <tr class="lh-copy">
-            <td class="pl2{{ darken }}"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>
-            <td class="pl2{{ darken }}">{{ p.versions | first }}</td>
-            <td class="pl2{{ darken }}">{{ p.tests | join: '<br>' }}</td>
-          </tr>
-        {% else %}
-          {% for v in p.versions %}
-            <tr class="lh-copy">
-              {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>{% endif %}
-              <td class="pl2{{ darken }}">{{ v }}</td>
-              {% if forloop.first %}<td class="pl2{{ darken }}" rowspan="{{ n }}">{{ p.tests | join: '<br>' }}</td>{% endif %}
-            </tr>
-          {% endfor %}
-        {% endif %}
+        <tr class="stripe-dark">
+          <td class="pa2"><a href="{{ p.url | relative_url }}" title="{{ p.title }}">{{ p.title }}</a></td>
+          <td class="pa2">{{ p.versions | join: '<br>' }}</td>
+          <td class="pa2">{{ p.tests | join: '<br>' }}</td>
+        </tr>
       {% endfor %}
       </tbody>
     </table>

@@ -12,7 +12,8 @@ permalink: /references/
 
   <main class="center pt4 pt0-l">
     <ul>
-      <li><a href="{{ '/languages' | relative_url }}" title="Languages and Environments">Languages and Environments</a></li>
+      <li><a href="{{ '/api' | relative_url }}" title="Codewars API">API</a></li>
+      <li><a href="{{ '/languages' | relative_url }}" title="Supported Languages">Languages</a></li>
 
       {% for t in site.references %}
         <li><a href="{{ t.url | relative_url }}" title="{{ t.title }}">{{ t.title }}</a></li>
@@ -30,9 +31,6 @@ permalink: /references/
           </ul>
         </li>
       {% endfor %}
-
-
-      <li><a href="{{ '/api' | relative_url }}" title="Codewars API">API</a></li>
     </ul>
   </main>
 
