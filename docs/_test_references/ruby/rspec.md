@@ -1,9 +1,9 @@
 ---
-title: RSpec Testing Framework
+title: RSpec
 language: ruby
 ---
 
-# RSpec Testing Framework
+# {{ page.title }}
 
 Codewars supports the RSpec behavior-driven testing framework.
 

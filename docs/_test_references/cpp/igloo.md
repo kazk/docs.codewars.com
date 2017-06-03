@@ -1,5 +1,5 @@
 ---
-title: Igloo Testing Framework
+title: Igloo
 language: cpp
 
 basic_setup: |-

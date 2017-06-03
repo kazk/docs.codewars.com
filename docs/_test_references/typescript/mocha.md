@@ -1,9 +1,9 @@
 ---
-title: Mocha Testing Framework
+title: Mocha
 language: typescript
 ---
 
-# Mocha Testing Framework
+# {{ page.title }}
 
 Codewars supports [Mocha](http://mochajs.org/) testing framework in BDD and TDD interfaces.
 

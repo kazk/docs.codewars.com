@@ -1,9 +1,9 @@
 ---
-title: hspec Testing Framework
+title: hspec
 language: haskell
 ---
 
-# hspec Testing Framework
+# {{ page.title }}
 
 Codewars supports [hspec](https://hackage.haskell.org/package/hspec-meta-1.10.0),
 a BDD test framework for Haskell modeled after

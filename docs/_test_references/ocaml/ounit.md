@@ -1,9 +1,6 @@
 ---
-title: OUnit Testing Framework
+title: OUnit
 language: ocaml
-
-introduction: |-
-  Codewars supports [OUnit](http://ounit.forge.ocamlcore.org/api-ounit/) testing framework.
 
 assertions:
   - name: assert_failure
@@ -103,7 +100,7 @@ construction:
     desc: Generic function to create a test list.
 ---
 
-# OUnit Testing Framework
+# {{ page.title }}
 
 Codewars supports [OUnit](http://ounit.forge.ocamlcore.org/api-ounit/) testing framework.
 

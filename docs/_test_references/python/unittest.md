@@ -1,9 +1,9 @@
 ---
-title: unittest Testing Framework
+title: unittest
 language: python
 ---
 
-# unittest Testing Framework
+# {{ page.title }}
 
 Codewars supports the `unittest` unit testing framework.
 

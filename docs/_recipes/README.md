@@ -4,6 +4,10 @@ Collection of copy and paste-able solutions to common problems.
 
 Pages in this collection should contain "Problem", "Solution", and "Discussion".
 
+Please note that this collection is still **highly experimental**.
+Any feedback is appreciated.
+Maybe we'll have better idea once contents are added.
+
 ## Front Matter
 
 ```

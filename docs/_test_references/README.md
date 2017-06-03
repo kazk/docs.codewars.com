@@ -1,6 +1,6 @@
 # `test_references`
 
-Collection of test frameworks for each supported language.
+Collection of test framework references for each supported language.
 
 These should be skimmable and consistent.
 

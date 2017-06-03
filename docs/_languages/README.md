@@ -1,6 +1,6 @@
 # `languages`
 
-Collection of general environment information for each supported language.
+Collection of general information for each supported language.
 
 ## Front Matter
 

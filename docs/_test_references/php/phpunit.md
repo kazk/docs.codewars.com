@@ -1,11 +1,9 @@
 ---
-title: PHPUnit Testing Framework
+title: PHPUnit
 language: php
 ---
 
-# PHPUnit Testing Framework
-
-## Overview
+# {{ page.title }}
 
 Codewars supports [PHPUnit](https://phpunit.de/) testing framework.
 

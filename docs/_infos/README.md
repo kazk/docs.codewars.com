@@ -1,7 +1,6 @@
 # `infos`
 
-Collections of documents containing generic information like
-introductions to Codewars platform.
+Collections of general information about Codewars platform.
 
 - Getting started
 - What is ...?
@@ -12,6 +11,7 @@ introductions to Codewars platform.
 ## TODO
 
 - Organize information
+- Navigation
 - Avoid using unfamiliar terms without introducing them
   - Example: Beta Kata Process uses "sensei".
 - Improve consistency. kyu, kyū, Kyu.

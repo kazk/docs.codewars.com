@@ -1,8 +1,57 @@
+# Codewars Documentation
+
+- [Introduction](#introduction)
+- [Collections](#collections)
+  - [languages](#languages)
+  - [test_references](#test_references)
+  - [references](#references)
+  - [tutorials](#tutorials)
+  - [infos](#infos)
+- [Development](#development)
+- [Known Issues](#known-issues)
+- [TODO](#todo)
+
+## Introduction
+
+This project makes Codewars' documentation open for contribution.
+
+Main goals are to:
+
+- Make contents easy to contribute
+- Keep maintenance cost low
+- Define structural standards
+
+### Ease of Contribution
+
+Documentations are plain text files using Markdown syntax.
+
+Files containing templates may have an extension `.html`,
+but the logic is separated so that markdown syntax can be used within them to write contents.
+
+### Low Maintenance Cost
+
+Static site generation with [Jekyll](https://jekyllrb.com/)
+and hosting on GitHub Pages are handled automatically.
+This setup does not require any external tools or build step.
+
+Use of templates, data files, and YAML front matter reduces the cost of keeping information up to date.
+
+### Structural Standards
+
+Documentations are organized by topic and target audience.
+
+Our documentation should focus on topics related to Codewars.
+
+For example, instead of writing lengthy documentation on how to use testing frameworks in general,
+we should write quick references with links pointing to the official documentation.
+We need to document the differences of using them locally and on Codewars if any.
+
+
 ## Collections
 
 ### `languages`
 
-Collection of general environment information for each supported language.
+Collection of general information for each supported language.
 
 See [_languages/README.md](_languages/README.md) for details.
 
@@ -29,7 +78,7 @@ See [_tutorials/README.md](_tutorials/README.md) for details.
 
 ### `infos`
 
-Collections of documents containing generic information.
+Collections of general information about Codewars platform.
 
 See [_infos/README.md](_infos/README.md) for details.
 
@@ -77,14 +126,15 @@ docker run --rm --label=jekyll \
 
 - Document trade-offs, issues and reasons behind some decisions
 
-## Known Issues/Concerns
+## Known Issues
 
 ### Syntax Highlighting
 
 There're some syntax highlighting issues because Jekyll uses older version of Rouge.
 
 - JavaScript issues with newer syntax
-- F# not supported
+- F# is not supported
+- Crystal is not supported (use `ruby`). Not supported on latest Rouge either.
 - PHP requires `?start_inline=true` after `php` tag.
 
 It's possible to use client side syntax highlighters like

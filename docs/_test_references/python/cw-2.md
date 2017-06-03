@@ -3,7 +3,7 @@ title: Codewars Testing Framework
 language: python
 ---
 
-# Codewars Testing Framework
+# {{ page.title }}
 
 The `test` module provides the testing functionality needed to validate a kata's requirements.
 

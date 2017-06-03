@@ -1,5 +1,5 @@
 ---
-title: RSpec Testing Framework for Shell
+title: RSpec for Shell
 language: shell
 ---
 

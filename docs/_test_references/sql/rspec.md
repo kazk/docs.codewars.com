@@ -1,5 +1,5 @@
 ---
-title: RSpec Testing Framework for SQL
+title: RSpec for SQL
 language: sql
 ---
 
